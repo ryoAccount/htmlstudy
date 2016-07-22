@@ -564,3 +564,37 @@ footer {
 #meTalk {
 	color: white;
 }
+
+/* codeを書く時に指定するclass */
+.pre-line {
+	font-family: 'Lucida Grande','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
+	text-decoration: none;
+	text-align: left;
+	background-color: black;
+	color: white;
+	white-space: pre-line; /* 折り返すがTabは詰める */
+}
+.pre-line em {
+	color: yellow;
+}
+.pre-wrap {
+	font-family: 'Lucida Grande','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
+	text-decoration: none;
+	text-align: left;
+	background-color: black;
+	color: white;
+	white-space: pre-wrap; /* 折り返し・Tab・改行をすべて有効 */
+}
+.pre-wrap em {
+	color: yellow;
+}
+
+/* つぶやき */
+.whisper {
+	font-size: 0.7em;
+}
+
+/* */
+
+
+
