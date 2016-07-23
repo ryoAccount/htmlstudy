@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <!-- Title -->
-    <title>がんばって勉強しろ。</title>
+    <title>nav要素</title>
     <!-- responsiveWebDesign -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 検索されやすくなるword -->
@@ -65,59 +65,50 @@
 				<div class="controlNav"></div>
 			</div><!-- /.slide -->
 
-			<h2>HTMLの書式</h2>
-			<dl>
-				<dt><a href="doctype.html">DOCTYPE</a></dt>
-				<dd>「文書がHTMLであること」と「HTMLのバージョン」を宣言する</dd>
+			<h2>nav要素</h2>
+			<p>ナビゲーションを表す要素です。</p>
+			<p>サイト内の各ページを移動する起点となるメニューリンクに使用されます。</p>
+			<p>リンクが集まっているからといって、何でもかんでもnav要素で囲むのは誤りです。</p>
 
-				<dt><a href="html.html">html要素</a></dt>
-				<dd>HTMLの全体を表す要素</dd>
+			<div class="pre-line">&lt;!DOCTYPE html&gt;
+				&lt;html lang="ja"&gt;
+				　&lt;head&gt;
+				　　&lt;meta charaset="UTF-8"&gt;
+				　　&lt;title&gt;がんばって勉強しろ。&lt;/title&gt;
+				　&lt;/head&gt;
+				　&lt;body&gt;
+				　　&lt;header&gt;
+				<em>　　　　&lt;nav&gt;</em>
+				　　　　　　&lt;ul&gt;
+				　　　　　　　　&lt;li&gt;ホーム&lt;/li&gt;
+				　　　　　　　　&lt;li&gt;HTML&lt;/li&gt;
+				　　　　　　　　&lt;li&gt;CSS&lt;/li&gt;
+				　　　　　　　　&lt;li&gt;javascript&lt;/li&gt;
+				　　　　　　&lt;/ul&gt;
+				<em>　　　　&lt;/nav&gt;</em>
+				　　&lt;/header&gt;
+				　&lt;/body&gt;
+				&lt;/html&gt;
+			</div>
 
-				<dt><a href="head.html">head要素</a></dt>
-				<dd>文書に関するメタ情報を含める要素</dd>
+			<br>
 
-				<dt><a href="title.html">title要素</a></dt>
-				<dd>文書のタイトルをつける要素</dd>
+			<h5>実際の表示例</h5>
+			<div class="display">
+				<nav>
+					<ul>
+						<li><a href="../index.html">ホーム</a></li>
+						<li><a href="index.html">HTML</a></li>
+						<li><a href="../css/index.html">CSS</a></li>
+						<li><a href="../js/index.html">javascript</a></li>
+					</ul>
+				</nav>
+			</div>
 
-				<dt><a href="meta.html">meta要素</a></dt>
-				<dd>文書に関するいろいろな情報を記載する要素</dd>
-
-				<dt><a href="link.html">link要素</a></dt>
-				<dd>外部ファイルを読み込む際に指定する要素</dd>
-
-				<dt><a href="base.html">base要素</a></dt>
-				<dd>URLの相対パスの基準となるURLを指定する要素</dd>
-
-				<dt><a href="style.html">style要素</a></dt>
-				<dd>CSSをHTML文書内で指定する要素</dd>
-
-				<dt><a href="script.html">script要素</a></dt>
-				<dd>javascriptをHTML文書内に記述する際に指定する要素</dd>
-
-				<dt><a href="noscript.html">noscript要素</a></dt>
-				<dd>javascriptが無効になっている場合に実行される要素</dd>
-			</dl>
-
-			<hr><br>
-
-			<h2>セッション関連の要素</h2>
-			<dl>
-				<dt><a href="body.html">body要素</a></dt>
-				<dd>HTML文書の内容を表す要素</dd>
-
-				<dt><a href="header.html">header要素</a>　<span class="html5">html5で追加</span></dt>
-				<dd>HTML文書のヘッダを表す要素</dd>
-
-				<dt><a href="nav.html">nav要素</a>　<span class="html5">html5で追加</span></dt>
-				<dd>ナビゲーションを表す要素</dd>
-
-				<dt><a href="section.html">section要素</a>　<span class="html5">html5で追加</span></dt>
-				<dd>セクションを表す汎用的に使える要素</dd>
-
-				<dt><a href="article.html">article要素</a>　<span class="html5">html5で追加</span></dt>
-				<dd>サイト内で1つの独立（成立）したコンテンツを表す要素</dd>
-
-
+			
+			<p class="whisper">navをnaviと書いてしまいそうになるのは自分だけでしょうか・・(;´Д｀)</p>
+			
+			<br>
 		</div><!-- /#main -->
 	</div><!-- /#contents -->
 

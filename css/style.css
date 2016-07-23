@@ -577,16 +577,13 @@ footer {
 .pre-line em {
 	color: yellow;
 }
-.pre-wrap {
+
+/* 実際の表示 */
+.display {
 	font-family: 'Lucida Grande','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;
-	text-decoration: none;
-	text-align: left;
-	background-color: black;
-	color: white;
-	white-space: pre-wrap; /* 折り返し・Tab・改行をすべて有効 */
-}
-.pre-wrap em {
-	color: yellow;
+	border: 2px dotted #000;
+	border-radius: 5px;
+	padding: 10px 5px;
 }
 
 /* つぶやき */
@@ -594,7 +591,13 @@ footer {
 	font-size: 0.7em;
 }
 
-/* */
+/* html5で追加された要素 */
+.html5 {
+	background-color: rgb(255,0,0);
+	border-radius: 5px;
+	color: white;
+	padding: 3px;
+}
 
 
 

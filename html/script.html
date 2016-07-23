@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <!-- Title -->
-    <title>がんばって勉強しろ。</title>
+    <title>script要素</title>
     <!-- responsiveWebDesign -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 検索されやすくなるword -->
@@ -65,58 +65,42 @@
 				<div class="controlNav"></div>
 			</div><!-- /.slide -->
 
-			<h2>HTMLの書式</h2>
-			<dl>
-				<dt><a href="doctype.html">DOCTYPE</a></dt>
-				<dd>「文書がHTMLであること」と「HTMLのバージョン」を宣言する</dd>
+			<h2>script要素</h2>
+			<p>javascriptをHTML文書内に記述する際に指定する要素です。</p>
+			<p>ブラウザのレンダリングを邪魔しないように、body要素の最後に記述することが一般的です。</p>
 
-				<dt><a href="html.html">html要素</a></dt>
-				<dd>HTMLの全体を表す要素</dd>
+			<div class="pre-line">&lt;!DOCTYPE html&gt;
+				&lt;html lang="ja"&gt;
+				　&lt;head&gt;
+				　　&lt;meta charaset="UTF-8"&gt;
+				　　&lt;meta name="description" content="HTML がんばって勉強しろ。"&gt;
+				　　&lt;meta name="keyword" content="HTML,CSS,javascript,PHP"&gt;
+				　　&lt;link rel="stylesheet" href="css/style.css" type="text/css"&gt;
+				　　&lt;link rel="shortcut icon" href="images/app.ico"&gt;
+				　　&lt;base href="http://yuumin.chu.jp/htmlstudy"&gt;
+				　　&lt;style type="text/css"&gt;
+				　　　　h1 { text-align: center;}
+				　　&lt;/style&gt;
+				　　&lt;title&gt;がんばって勉強しろ。&lt;/title&gt;
+				　&lt;/head&gt;
+				　&lt;body&gt;
+				<em>　　&lt;script type="text/javascript" src="script.js async"&gt;
+				　　&lt;/script&gt;</em>
+				　&lt;/body&gt;
+				&lt;/html&gt;
+			</div>
 
-				<dt><a href="head.html">head要素</a></dt>
-				<dd>文書に関するメタ情報を含める要素</dd>
+			<br>
+			
+			<p>上記ではtype属性を指定していますが、HTML5ではデフォルトが"text/javascript"のため記載を省略可能となりました。</p>
+			<p>javascriptの実装を直接タグの中に記述することも可能ですし、src属性を使って外部ファイルを読み込むこともできます。</p>
 
-				<dt><a href="title.html">title要素</a></dt>
-				<dd>文書のタイトルをつける要素</dd>
+			<br>
+			
+			<p>また、上記のように<strong>async属性</strong>を付けると"script.js"が読み込まれた時点で1度実行されます。</p>
+			<p>asyncではなく、<strong>defer属性</strong>を付けるとWebサイト(htmlファイル)全体が読み込まれた時点で1度実行されます。</p>
 
-				<dt><a href="meta.html">meta要素</a></dt>
-				<dd>文書に関するいろいろな情報を記載する要素</dd>
-
-				<dt><a href="link.html">link要素</a></dt>
-				<dd>外部ファイルを読み込む際に指定する要素</dd>
-
-				<dt><a href="base.html">base要素</a></dt>
-				<dd>URLの相対パスの基準となるURLを指定する要素</dd>
-
-				<dt><a href="style.html">style要素</a></dt>
-				<dd>CSSをHTML文書内で指定する要素</dd>
-
-				<dt><a href="script.html">script要素</a></dt>
-				<dd>javascriptをHTML文書内に記述する際に指定する要素</dd>
-
-				<dt><a href="noscript.html">noscript要素</a></dt>
-				<dd>javascriptが無効になっている場合に実行される要素</dd>
-			</dl>
-
-			<hr><br>
-
-			<h2>セッション関連の要素</h2>
-			<dl>
-				<dt><a href="body.html">body要素</a></dt>
-				<dd>HTML文書の内容を表す要素</dd>
-
-				<dt><a href="header.html">header要素</a>　<span class="html5">html5で追加</span></dt>
-				<dd>HTML文書のヘッダを表す要素</dd>
-
-				<dt><a href="nav.html">nav要素</a>　<span class="html5">html5で追加</span></dt>
-				<dd>ナビゲーションを表す要素</dd>
-
-				<dt><a href="section.html">section要素</a>　<span class="html5">html5で追加</span></dt>
-				<dd>セクションを表す汎用的に使える要素</dd>
-
-				<dt><a href="article.html">article要素</a>　<span class="html5">html5で追加</span></dt>
-				<dd>サイト内で1つの独立（成立）したコンテンツを表す要素</dd>
-
+			<br>
 
 		</div><!-- /#main -->
 	</div><!-- /#contents -->

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <!-- Title -->
-    <title>がんばって勉強しろ。</title>
+    <title>article要素</title>
     <!-- responsiveWebDesign -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 検索されやすくなるword -->
@@ -65,59 +65,32 @@
 				<div class="controlNav"></div>
 			</div><!-- /.slide -->
 
-			<h2>HTMLの書式</h2>
-			<dl>
-				<dt><a href="doctype.html">DOCTYPE</a></dt>
-				<dd>「文書がHTMLであること」と「HTMLのバージョン」を宣言する</dd>
+			<h2>article要素</h2>
+			<p>サイト内で1つの独立（成立）したコンテンツを表す要素です。</p>
+			<p>つまりarticle要素の中身だけを抽出してもそれだけで内容の意味が通じるコンテンツということです。</p>
+			<p>そのため、article要素の中身を別ページにコピペしても読み手（ユーザ）に意味が伝わる内容にしないといけません。</p>
 
-				<dt><a href="html.html">html要素</a></dt>
-				<dd>HTMLの全体を表す要素</dd>
+			<div class="pre-line">&lt;!DOCTYPE html&gt;
+				&lt;html lang="ja"&gt;
+				　&lt;head&gt;
+				　　&lt;meta charaset="UTF-8"&gt;
+				　　&lt;title&gt;がんばって勉強しろ。&lt;/title&gt;
+				　&lt;/head&gt;
+				　&lt;body&gt;
+				　　&lt;header&gt;
+				　　　　&lt;nav&gt;&lt;/nav&gt;
+				　　&lt;/header&gt;
+				<em>　　&lt;article&gt;
+				　　&lt;/article&gt;</em>
+				　&lt;/body&gt;
+				&lt;/html&gt;
+			</div>
 
-				<dt><a href="head.html">head要素</a></dt>
-				<dd>文書に関するメタ情報を含める要素</dd>
-
-				<dt><a href="title.html">title要素</a></dt>
-				<dd>文書のタイトルをつける要素</dd>
-
-				<dt><a href="meta.html">meta要素</a></dt>
-				<dd>文書に関するいろいろな情報を記載する要素</dd>
-
-				<dt><a href="link.html">link要素</a></dt>
-				<dd>外部ファイルを読み込む際に指定する要素</dd>
-
-				<dt><a href="base.html">base要素</a></dt>
-				<dd>URLの相対パスの基準となるURLを指定する要素</dd>
-
-				<dt><a href="style.html">style要素</a></dt>
-				<dd>CSSをHTML文書内で指定する要素</dd>
-
-				<dt><a href="script.html">script要素</a></dt>
-				<dd>javascriptをHTML文書内に記述する際に指定する要素</dd>
-
-				<dt><a href="noscript.html">noscript要素</a></dt>
-				<dd>javascriptが無効になっている場合に実行される要素</dd>
-			</dl>
-
-			<hr><br>
-
-			<h2>セッション関連の要素</h2>
-			<dl>
-				<dt><a href="body.html">body要素</a></dt>
-				<dd>HTML文書の内容を表す要素</dd>
-
-				<dt><a href="header.html">header要素</a>　<span class="html5">html5で追加</span></dt>
-				<dd>HTML文書のヘッダを表す要素</dd>
-
-				<dt><a href="nav.html">nav要素</a>　<span class="html5">html5で追加</span></dt>
-				<dd>ナビゲーションを表す要素</dd>
-
-				<dt><a href="section.html">section要素</a>　<span class="html5">html5で追加</span></dt>
-				<dd>セクションを表す汎用的に使える要素</dd>
-
-				<dt><a href="article.html">article要素</a>　<span class="html5">html5で追加</span></dt>
-				<dd>サイト内で1つの独立（成立）したコンテンツを表す要素</dd>
-
-
+			<br>
+			
+			<p>article要素の中身は、ブログや新聞、雑誌などの記事が設定されることが多いです。</p>
+			
+			<br>
 		</div><!-- /#main -->
 	</div><!-- /#contents -->
 
