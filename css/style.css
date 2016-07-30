@@ -599,5 +599,13 @@ footer {
 	padding: 3px;
 }
 
+/* html5で変更された要素 */
+.html5change {
+	background-color: rgb(0,255,0);
+	border-radius: 5px;
+	color: white;
+	padding: 3px;
+}
+
 
 
