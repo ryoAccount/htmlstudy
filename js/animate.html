@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+    <!-- Title -->
+    <title>animate</title>
+    <!-- responsiveWebDesign -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 検索されやすくなるword -->
+    <meta name="keyword" content="HTML,CSS,JavaScript">
+    <!-- 検索エンジンに表示される文章 -->
+    <meta name="description" content="HTML,CSS,JavaScript,PHP がんばって勉強しろ。">
+    <!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../images/app.ico">
+</head>
+
+<body>
+	<div id="contents">
+		<div id="sub">
+			<header>
+				<h1><a href="../index.html">フロントエンドエンジニアとして生きたければがんばって勉強しろ。</a></h1>
+				<noscript id="noscript">
+			      ブラウザのJavaScriptをOFFにしないで(´･ω･｀)
+			    </noscript>
+			    <p class="summary">
+					HTML,CSS,javascript,PHPなどWebサイト作成に必要な主要プログラミング言語をまとめてみた。
+					<br>
+					・・と言ってもまだまだ誠意作成中ですが・・。
+					<br>
+          			もし、僕と同じようにWebサイトを作っている方々に少しでも参考になればいいなぁと思います(*´ω｀*)
+          		</p>
+          		<!-- アクセスカウンタ -->
+	            <img src="http://users402.lolipop.jp/cnt/accnt.php?cnt_id=2066758&ac_id=LAA0759348&mode=total">
+			</header>
+			<nav>
+				<h3>メニュー<span id="navBtn"><span id="navBtnIcon"></span></span></h3>
+				<ul>
+					<li><a href="../index.html">ホーム</a></li>
+	                <li><a href="../html/index.html">HTML</a></li>
+	                <li><a href="../css/index.html">CSS</a></li>
+	                <li><a href="index.html">javascript</a></li>
+	                <li>PHP (準備中)</li>
+	                <li>便利なツール (準備中)</li>
+				</ul>
+			</nav>
+
+			<br>
+
+			<!-- AD -->
+			<a href="https://px.a8.net/svt/ejp?a8mat=2NOVEP+B6H1PU+348+6I9N5" target="_blank">
+			<img border="0" width="234" height="60" alt="" src="http://www20.a8.net/svt/bgt?aid=160723969676&wid=001&eno=01&mid=s00000000404001093000&mc=1"></a>
+			<img border="0" width="1" height="1" src="http://www19.a8.net/0.gif?a8mat=2NOVEP+B6H1PU+348+6I9N5" alt="">
+
+		</div><!-- /#sub -->
+
+		<div id="main">
+			<div class="slide">
+				<ul class="slideInner">
+					<li><a href="../html/index.html"><img src="../images/photo04.jpg" alt=""></a></li>
+					<li><a href="../css/index.html"><img src="../images/photo05.jpg" alt=""></a></li>
+					<li><a href="index.html"><img src="../images/photo06.jpg" alt=""></a></li>
+				</ul>
+				<div class="slidePrev"><img src="../images/nav_prev.png" alt="前へ"></div>
+				<div class="slideNext"><img src="../images/nav_next.png" alt="次へ"></div>
+				<div class="controlNav"></div>
+			</div><!-- /.slide -->
+
+			<h2>animate</h2>
+			<p>要素を移動させたり大きくしたり、アニメーション（動き）を与える際に使用します。</p>
+			
+			<div class="pre-line">$('.left').click(function() {
+				　$('.moving').<em>animate</em>( {'marginLeft' : '-=50px'} );
+			});
+			$('.right').click(function() {
+				　$('.moving').<em>animate</em>( {'marginLeft' : '+=50px'} );
+			});
+			</div>
+
+			<br>
+
+			<p>animate関数の内容は"margin-left"（ボックスの外側の余白を指定するCSS）に対して50px増減させる処理内容になります。</p>
+			<p>もし、"-="や"+="がなかったら、"margin-left"に50pxを設定する処理になります。</p>
+
+			<br>
+
+			<h4>実際の表示</h4>
+			<p>ボタンをクリックすると動きます。</p>
+
+			<button class="left">＜</button>
+			<button class="right">＞</button>
+
+			<div class="moving" style="width:50px;height:50px;background-color:green;">
+			</div>
+
+			<br>
+
+		</div><!-- /#main -->
+	</div><!-- /#contents -->
+
+	<footer>
+		<div class="footmenu">
+			<ul>
+				<li><a href="../index.html">ホーム</a></li>
+				<li><a href="../html/index.html">HTML</a></li>
+				<li><a href="../css/index.html">CSS</a></li>
+				<li><a href="index.html">javascript</a></li>
+				<li>PHP (準備中)</li>
+				<li>便利なツール (準備中)</li>
+			</ul>
+		</div>
+		<div class="copyright">Copyright &#169; 2016 - ryo&amp;yuumin All Rights Reserved.</div>
+	</footer>
+
+	<!-- Topへ戻る -->
+	<div class="totop">
+		<a href="#">
+			<img src="../images/totop.png" alt="ページのトップへ戻る">
+		</a>
+	</div>
+		
+	<!-- jQuery,javascriptipt -->
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="jquery.smoothscroll.js"></script>
+	<script type="text/javascript" src="jquery.scrollshow.js"></script>
+	<script type="text/javascript" src="jquery.rollover.js"></script>
+	<script type="text/javascript" src="jquery.slideshow.js"></script>
+	<script>
+		$(function($){
+			$('html').smoothscroll({easing : 'swing', speed : 1000, margintop : 10});
+			$('.totop').scrollshow({position : 500});
+			$('.slide').slideshow({
+				touch		: true,
+				touchDistance : '80',
+				bgImage	  : false,
+				autoSlide	: true,
+				effect	   : 'slide',
+				repeat	   : true,
+				easing	   : 'swing',
+				interval	 : 3000,
+				duration	 : 500,
+				imgHoverStop : true,
+				navHoverStop : true,
+				navImg	   : false,
+				navImgCustom : false,
+				navImgSuffix : ''
+			});
+			$('.slidePrev img').rollover();
+			$('.slideNext img').rollover();
+		});
+	</script>
+
+	<script type="text/javascript">
+		$('.left').click(function() {
+			$('.moving').animate({'marginLeft':'-=50px'});
+		});
+		$('.right').click(function() {
+			$('.moving').animate({'marginLeft':'+=50px'});
+		});
+	</script>
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
+</body>
+</html>
