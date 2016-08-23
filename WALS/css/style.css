@@ -14,7 +14,7 @@ body {
 ul li {
 	margin: 1.2em .25em;
 }
-a {
+li a {
 	text-decoration: none;
 	color: grey;
 	margin: 0 1em;
@@ -23,8 +23,8 @@ a {
 	border-bottom: 1px solid #ccc;
 	transition: all .3s;
 }
-a:hover {
-	color: #fff;
+li a:hover {
+	color: black;
 	background-color: rgb(50,150,250);
 }
 
@@ -98,6 +98,26 @@ p {
 	background: url(../image/icon3.jpeg) no-repeat;
 }
 
+.links {
+	text-decoration: none;
+	display: inline-block;
+	transition: .3s;
+	transform: scale(1);
+}
+.links:hover {
+	transform: scale(1.5);
+	color: green;
+}
+
+.copyright {
+	clear:both;
+	padding:20px 0;
+	font-size:1em;
+	text-align:center;
+	color:white;
+	background:black;
+}
+
 table {
 	border-collapse: collapse;	border-spacing: 0;
 	width: 100%;
@@ -112,4 +132,5 @@ ol li {
 	margin-left: 1em;
 	list-style-type: none;
 }
+
 
