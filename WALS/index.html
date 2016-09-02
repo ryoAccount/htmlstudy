@@ -10,28 +10,58 @@
 </head>
 <body>
 	<header class="siteMenu">
-		<h2 id="menu1">サイトについて</h2>
-		<nav>
-			<ul>
-				<li><a href="#" class="sm1">何のサイト？</a></li>
-			</ul>
-		</nav>
-		<br>
+		<div id="pcMenu">
+			<h2 id="menu1">サイトについて</h2>
+			<nav>
+				<ul>
+					<li><a href="#" class="sm1">何のサイト？</a></li>
+				</ul>
+			</nav>
+			<br>
 
-		<h2 id="menu2">妊娠周期</h2>
-		<nav>
-			<ul>
-				<li><a href="#" class="sm2">2ヶ月目</a></li>
-				<li><a href="#" class="sm3">3ヶ月目</a></li>
-				<li><a href="#" class="sm4">4ヶ月目</a></li>
-				<li><a href="#" class="sm5">5ヶ月目</a></li>
-				<li><a href="#" class="sm6">6ヶ月目</a></li>
-				<li><a href="#" class="sm7">7ヶ月目</a></li>
-				<li><a href="#" class="sm8">8ヶ月目</a></li>
-				<li><a href="#" class="sm9">9ヶ月目</a></li>
-				<li><a href="#" class="sm10">10ヶ月目</a></li>
-			</ul>
-		</nav>
+			<h2 id="menu2">妊娠周期</h2>
+			<nav>
+				<ul>
+					<li><a href="#" class="sm2">2ヶ月目</a></li>
+					<li><a href="#" class="sm3">3ヶ月目</a></li>
+					<li><a href="#" class="sm4">4ヶ月目</a></li>
+					<li><a href="#" class="sm5">5ヶ月目</a></li>
+					<li><a href="#" class="sm6">6ヶ月目</a></li>
+					<li><a href="#" class="sm7">7ヶ月目</a></li>
+					<li><a href="#" class="sm8">8ヶ月目</a></li>
+					<li><a href="#" class="sm9">9ヶ月目</a></li>
+					<li><a href="#" class="sm10">10ヶ月目</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<header class="spSiteMenu">
+		<div id="spMenu">
+			<a id="hamburger" href="#" onclick="drawerMenu();">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+			
+			<nav id="splink" onclick="drawerMenu();">
+				<ul>
+					<li><a href="#" class="sm1">何のサイト？</a></li>
+				</ul>
+				<ul>
+					<li><a href="#" class="sm2">2ヶ月目</a></li>
+					<li><a href="#" class="sm3">3ヶ月目</a></li>
+					<li><a href="#" class="sm4">4ヶ月目</a></li>
+					<li><a href="#" class="sm5">5ヶ月目</a></li>
+					<li><a href="#" class="sm6">6ヶ月目</a></li>
+					<li><a href="#" class="sm7">7ヶ月目</a></li>
+					<li><a href="#" class="sm8">8ヶ月目</a></li>
+					<li><a href="#" class="sm9">9ヶ月目</a></li>
+					<li><a href="#" class="sm10">10ヶ月目</a></li>
+				</ul>
+			</nav>
+		</div>
+
 	</header>
 
 	<main class="mainContents">
@@ -59,7 +89,7 @@
 			<br>
 			
 			<h3>この頃の赤ちゃんの様子</h3>
-			<img class="picts" src="image/pict2.jpg" alt="2ヶ月目">
+			<img class="picts" src="image/pict2.png" alt="2ヶ月目">
 			<table>
 				<thead>
 					<tr>
@@ -96,20 +126,21 @@
 			<p>妊娠中は食べられるものが少し限られてきます。</p>
 			<p>アルコール（お酒）はもちろんNGですが、カフェインを含むコーヒーや烏龍茶、食中毒の心配がある生の魚介類も極力控えるようにしましょう。</p>
 			<p>「気分転換に回転寿司でも行こうか。」とか言わないように気を付けてください。</p>
+			<p>妊娠中の重要な栄養素として<a class="links" target="_blank" href="https://ja.wikipedia.org/wiki/%E8%91%89%E9%85%B8">葉酸</a>が挙げられます。葉酸サプリメントを買ってきてあげましょう。</p>
 			<br>
 
 			<h3>まとめ</h3>
 			<ol>
 				<li>
-					<img src="image/matome1.jpeg">
+					<img src="image/matome1.png">
 					禁煙・禁酒する（少なくとも嫁さんの前では…）
 				</li>
 				<li>
-					<img src="image/matome2.jpeg">
+					<img src="image/matome2.png">
 					どんなに体調悪くとも市販薬は服用させない
 				</li>
 				<li>
-					<img src="image/matome3.jpeg">
+					<img src="image/matome3.png">
 					食べてよいもの・悪いものを把握する
 				</li>
 			</ol>
@@ -123,7 +154,7 @@
 			<br>
 			
 			<h3>この頃の赤ちゃんの様子</h3>
-			<img class="picts" src="image/pict3.jpg" alt="3ヶ月目">
+			<img class="picts" src="image/pict3.png" alt="3ヶ月目">
 			<table>
 				<thead>
 					<tr>
@@ -162,22 +193,22 @@
 			<h3>まとめ</h3>
 			<ol>
 				<li>
-					<img src="image/matome4.jpeg">
+					<img src="image/matome4.png">
 					メンタル的にも支えてあげましょう
 				</li>
 				<li>
-					<img src="image/matome5.jpeg">
+					<img src="image/matome5.png">
 					体調がいい日は積極的に外出を
 				</li>
 				<li>
-					<img src="image/matome6.jpeg">
+					<img src="image/matome6.png">
 					風疹の抗体検査を受診しましょう
 				</li>
 			</ol>
 			<br>
 
 			<h3>リンク</h3>
-			<a class="links" href="http://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/rubella/vaccination/">風疹の感染予防（厚生労働省）</a>
+			<a class="links" target="_blank" href="http://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/rubella/vaccination/">風疹の感染予防（厚生労働省）</a>
 
 		</section>
 
@@ -189,7 +220,7 @@
 			<br>
 			
 			<h3>この頃の赤ちゃんの様子</h3>
-			<img class="picts" src="image/pict4.jpg" alt="4ヶ月目">
+			<img class="picts" src="image/pict4.png" alt="4ヶ月目">
 			<table>
 				<thead>
 					<tr>
@@ -227,19 +258,19 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><a class="links" href="http://www.katoji-onlineshop.com/shopbrand/017/Y">Peg-Perego</a></td>
+						<td><a class="links" target="_blank" href="http://www.katoji-onlineshop.com/shopbrand/017/Y">Peg-Perego</a></td>
 						<td>ベビーカー</td>
 						<td>イタリアで生まれたブランド。<br>創立以来一貫してイタリアのデザイナーがデザインを手掛けている。</td>
 					</tr>
 					<tr>
-						<td><a class="links" href="http://www.blossom39.com/babycar/bugaboo.html">bugaboo</a></td>
+						<td><a class="links" target="_blank" href="http://www.blossom39.com/babycar/bugaboo.html">bugaboo</a></td>
 						<td>ベビーカー</td>
 						<td>オランダで生まれたブランド。<br>
 						ユニークな外見、豊富なカラーバリエーションが魅力。</td>
 					</tr>
 					<tr>
 						<td>
-							<a class="links" href="http://casarich.co.jp/brand/inglesina">Inglesina</a>
+							<a class="links" target="_blank" href="http://casarich.co.jp/brand/inglesina">Inglesina</a>
 						</td>
 						<td>ベビーカー</td>
 						<td>イタリアで生まれたブランド。<br>
@@ -247,7 +278,7 @@
 					</tr>
 					<tr>
 						<td>
-							<a class="links" href="http://www.ergobaby.jp/">ergobaby</a>
+							<a class="links" target="_blank" href="http://www.ergobaby.jp/">ergobaby</a>
 						</td>
 						<td>抱っこ紐</td>
 						<td>ハワイで生まれたブランド。<br>
@@ -255,7 +286,7 @@
 					</tr>
 					<tr>
 						<td>
-							<a class="links" href="http://ec.bornelund.co.jp/shop/pages/campaign_magformers.aspx">Mag Formers</a>
+							<a class="links" target="_blank" href="http://ec.bornelund.co.jp/shop/pages/campaign_magformers.aspx">Mag Formers</a>
 						</td>
 						<td>おもちゃ</td>
 						<td>アメリカ生まれのおもちゃ。<br>
@@ -269,7 +300,7 @@
 			<h3>まとめ</h3>
 			<ol>
 				<li>
-					<img src="image/matome7.jpeg">
+					<img src="image/matome7.png">
 					ベビーグッズの購入計画をたてよう。
 				</li>
 			</ol>
@@ -283,7 +314,7 @@
 			<br>
 			
 			<h3>この頃の赤ちゃんの様子</h3>
-			<img class="picts" src="image/pict5.jpg" alt="5ヶ月目">
+			<img class="picts" src="image/pict5.png" alt="5ヶ月目">
 			<table>
 				<thead>
 					<tr>
@@ -311,34 +342,199 @@
 
 			<p>胎教を始めましょう。</p>
 			<p>胎教は「妊婦が精神安定に努めて、胎児によい影響を与えようとすること」です。</p>
-			<p>ひと昔前は英語のリスニングをして、産まれる前からの超早期英才教育を行う方もいらっしゃったそうですが、医学的にそれで天才が産まれるという根拠はありません。</p>
-			<p>クラシックを聴くと脳にα波が出てリラックス効果があるとされています。</p>
+			<p>ひと昔前は英語のリスニングをして、産まれる前からの超早期英才教育を行う方もいたそうですが、医学的にそれで語学力の優れた子供が産まれるという根拠はないようです。</p>
+			<p><strong>とにかく妊婦がリラックスできることが最重要！</strong>リラックスさえできればロックでもデスメタルでも実は問題なし。</p>
+			<p>ちなみにクラシックを聴くと脳にα波が出てリラックス効果があるとされています。</p>
+			<p>管理人はYouTubeの胎教チャンネルを登録してこれ見よがしに流していました。</p>
 			<br>
 
 			<h3>まとめ</h3>
 			<ol>
 				<li>
-					<img src="image/matome4.jpeg">
+					<img src="image/matome8.png">
+					戌の日に安産祈願へ。
 				</li>
 				<li>
-					<img src="image/matome5.jpeg">
-				</li>
-				<li>
-					<img src="image/matome6.jpeg">
+					<img src="image/matome9.png">
+					胎教でリラックス(^^♪)
 				</li>
 			</ol>
 			<br>
 
-
+			<h3>リンク</h3>
+			<p>都内の安産祈願が可能な神社です。</p>
+			
+			<p><a class="links" target="_blank" href="http://www.suitengu.or.jp/">東京水天宮</a></p>
+			<p><a class="links" target="_blank" href="http://www.ohmiya-hachimangu.or.jp/">大宮八幡宮（東京のへそ）</a></p>
+			<br>
 		</section>
 
+		<!-- 6ヶ月目 -->
 		<section class="contents sc6" style="display:none;">
 			<h3>6ヶ月目</h3>
+			<p>妊娠20~23週目。</p>
+			<p>妊娠期間もちょうど折り返し地点に突入しました。サッカーで言うならハーフタイムです。</p>
+			<p></p>
+			<br>
+			
+			<h3>この頃の赤ちゃんの様子</h3>
+			<img class="picts" src="image/pict6.png" alt="6ヶ月目">
+			<table>
+				<thead>
+					<tr>
+						<th>身長</th>
+						<th>体重</th>
+						<th>補足</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>30cm</th>
+						<th>500g（夏みかん2個）</th>
+						<th>爪が毛が生える<br>瞬きや口を開けることも</th>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>旦那さんに必要な対応は？</h3>
+			<p>嫁さんと一緒に出掛ける時は歩く速さに注意しましょう。</p>
+			<p>この頃、妊婦の体は更に子宮を広げるために柔軟性を高めるためのホルモンが分泌されます。</p>
+			<p>体が柔らかくなりますが反対に体重を支える力が弱まり、腰痛になりやすくなります。</p>
+			<p>広がった子宮も心臓や肺を圧迫しているので、息切れしやすくなります。</p>
+			<p>一休さんくらいに慌てないで一休みしながら歩くことを心がけましょう。</p>
+			<br>
+
+			<p>赤ちゃんの名前を考えよう。</p>
+			<p>そろそろ性別も判明してくる頃です（赤ちゃんの体勢により判別できないこともあります。）</p>
+			<p>名前は一生ものですので、後悔しないようにしましょう。</p>
+			<br>
+
+			<p><b>突然ですが問題です。何と読むでしょうか？</b></p>
+			<table>
+				<caption class="cap1">男の子</caption>
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>名前</th>
+						<th><input class="buttonStyle" type="button" name="button" value="正解は…?" onclick="answerOpen();"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<th>是留舵</th>
+						<th class="answer">ぜるだ</th>
+					</tr>
+					<tr>
+						<th>2</th>
+						<th>夢見</th>
+						<th class="answer">ろまん</th>
+					</tr>
+					<tr>
+						<th>3</th>
+						<th>瑛磨</th>
+						<th class="answer">えいす</th>
+					</tr>
+				</tbody>
+			</table>
+
+			<table>
+				<caption class="cap2">女の子</caption>
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>名前</th>
+						<th><input class="buttonStyle" type="button" name="button" value="正解は…?" onclick="answerOpen2();"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<th>理想女</th>
+						<th class="answer2">りそな</th>
+					</tr>
+					<tr>
+						<th>2</th>
+						<th>音音</th>
+						<th class="answer2">のんのん</th>
+					</tr>
+					<tr>
+						<th>3</th>
+						<th>宝愛瑠</th>
+						<th class="answer2">じゅえる</th>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>まとめ</h3>
+			<ol>
+				<li>
+					<img src="image/matome10.png">
+					歩く時はゆっくりゆっくり…
+				</li>
+				<li>
+					<img src="image/matome11.png">
+					素敵な名前を付けてあげよう
+				</li>
+			</ol>
+			<br>
 
 		</section>
 
+		<!-- 7ヶ月目 -->
 		<section class="contents sc7" style="display:none;">
-			<h3>7ヶ月目</h3>
+			<h2 class="sctitle">7ヶ月目</h2>
+			<p>妊娠24~27週目。</p>
+			<p>出産予定日まであと100日をきります。カウントダウンが始まった感じがしますね。</p>
+			<br>
+			
+			<h3>この頃の赤ちゃんの様子</h3>
+			<img class="picts" src="image/pict7.png" alt="7ヶ月目（まだ撮っていません。）">
+			<table>
+				<thead>
+					<tr>
+						<th>身長</th>
+						<th>体重</th>
+						<th>補足</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>32～36cm</th>
+						<th>800～1000g（メロン1個）</th>
+						<th>大脳が発達<br>指しゃぶりをする</th>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>旦那さんに必要な対応は？</h3>
+			<p>保育所を探しましょう（俗にいう保活）</p>
+			<p>夫婦共働きを考えている場合、避けては通れない待機児童問題…</p>
+			<p>ネットで何でも調べられる時代ですが、保活するならまず最初に自治体の窓口へ。</p>
+			<p>国もヤジられながらも内閣府が2015年の春から<a class="links" target="_blank" href="http://www8.cao.go.jp/shoushi/shinseido/index.html">子ども・子育て支援制度</a>を導入し、待機児童問題の対策をはじめています。</p>
+			<br>
+
+
+
+			<h3>まとめ</h3>
+			<ol>
+				<li>
+					<img src="image/matome8.png">
+					戌の日に安産祈願へ。
+				</li>
+				<li>
+					<img src="image/matome9.png">
+					胎教でリラックス(^^♪)
+				</li>
+			</ol>
+			<br>
+
+			<h3>リンク</h3>
+			<p>都内の安産祈願が可能な神社です。</p>
+			
+			<p><a class="links" target="_blank" href="http://www.suitengu.or.jp/">東京水天宮</a></p>
+			<p><a class="links" target="_blank" href="http://www.ohmiya-hachimangu.or.jp/">大宮八幡宮（東京のへそ）</a></p>
+			<br>
 
 		</section>
 
@@ -361,7 +557,7 @@
 
 	<footer>
 		<div class="copyright">
-			Copyright &#169; 2016 - ryo&yuumin All Rights Reserved.
+			Copyright &#169; 2016 - ryo&amp;yuumin All Rights Reserved.
 		</div>
 	</footer>
 

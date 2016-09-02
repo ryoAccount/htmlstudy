@@ -67,3 +67,24 @@ $('.sm10').click(function(){
 	$('a').css('color','grey');
 	$('.sm10').css('color','rgb(200,0,0)');
 });
+
+/* NameQuiz */
+function answerOpen() {
+	$('.answer').fadeIn(); 
+}
+function answerOpen2() {
+	$('.answer2').fadeIn(); 
+}
+
+/* spMenu */
+function drawerMenu() {
+	$('#splink').fadeToggle();
+	$('#hamburger').toggleClass('active');
+}
+
+
+
+
+
+
+
