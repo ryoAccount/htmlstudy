@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+/*================================================
+ *  CSSリセット
+ ================================================*/
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	font-family:"メイリオ",Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+	color: #FFF;
+	background-color: #000;
+}
+
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* nav */
+header {
+	position: fixed;
+	margin-top: 0;
+	padding-top: 0;
+}
+#logo {
+	width: 15%;
+	height: 15%;
+	float: left;
+}
+#navigation {
+	font-weight: bold;
+	text-align: right;
+}
+#navigation li {
+	display: inline;
+	list-style: none;
+	padding: 1em 1.5em;
+}
+#navigation li a {
+	text-decoration: none;
+}
+#navigation a:hover {
+	color: #D00;
+}
+#spmenulink {
+	display: none;
+}
+
+/* main */
+#mainImage {
+	display: block;
+	width: 90%;
+	height: 80%;
+	margin: 0 auto 2em;
+	padding-top: 9em;
+}
+
+.titles {
+	font-size: 2rem;
+	text-decoration: underline;
+	color: #D00;
+	margin: 0 1em;
+	top: 0;
+}
+.infomations {
+	margin-left: 5%;
+}
+
+/* Member */
+.memberPict {
+	display: inline-block;
+	width: 25%;
+	margin: 10px 5px;
+}
+
+.memberInfo {
+	display: inline-block;
+	vertical-align: top;
+	width: 70%;
+}
+
+.tds {
+	padding: 5px 20px 5px 5px;
+	color: #5D5;
+	font-weight: bold;
+	vertical-align: text-top;
+}
+
+/* Album */
+.albumPict {
+	display: inline-block;
+	width: 25%;
+	margin: 10px 5px;
+}
+
+.albumInfo {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.tds2 {
+	padding: 5px 20px 5px 5px;
+	color: #66E;
+	font-weight: bold;
+	vertical-align: text-top;
+}
+
+/* Link */
+.links {
+	text-decoration: none;
+	font-size: 1.2em;
+}
+.links:hover {
+	color: #F00;
+}
+.links:visited {
+	color: #AAA;
+}
+
+/* Ad */
+#ad {
+	padding-left: 3rem;
+}
+
+/* Copyright */
+.copyright {
+	clear:both;
+	padding:10px 0;
+	font-size:1em;
+	text-align:center;
+	color: rgba(255,0,0,0.5);
+}
+
+/* go to Top */
+#gototop {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	padding: 0 1.5em;
+	z-index: 5;
+	color: #F00;
+	text-decoration: none;
+	border: solid 2px #F00;
+}
+
+/* ResponsiveWebDesign */
+@media all and (max-width:640px) {
+	#menulink {
+		display: none;
+	}
+	#spmenulink {
+		display: block;
+	}
+
+	#hamburger {
+		position: fixed;
+		width: 2.5em;
+		height: 1em;
+		margin: 5px 0px 10px 5px;
+	}
+	#hamburger span {
+		position: fixed;
+		right: 5px;
+		top: 15px;
+		transition: all .4s;
+		box-sizing: border-box;
+		color: #FFF;
+		width: 20px;
+		height: 4px;
+		background-color: #AABBCC;
+		border-radius: 4px;
+	}
+	#hamburger span:nth-of-type(1) {
+		top: 5px;
+	}
+	#hamburger span:nth-of-type(2) {
+		bottom: 0;
+	}
+	#hamburger span:nth-of-type(3) {
+		top: 10px;
+	}
+
+	#splink {
+		display: none;
+	}
+	#splink li {
+		list-style: none;
+		padding: 1em 1.5em;
+		text-align: right;
+	}
+	#splink li a {
+		text-decoration: none;
+	}
+	#splink a:hover {
+		color: #D00;
+	}
+
+
+}
+
+
+
+
+
