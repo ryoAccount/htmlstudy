@@ -7,21 +7,20 @@ if (version_compare(PHP_VERSION, '5.1.0', '>=')) {
 }
 
 //---------------------------　必須設定　-----------------------
-//サイトのトップページのURL
+//トップページ
 $site_top = "http://yuumin.chu.jp/mycv/index.html";
-// 管理者メールアドレス ※メールを受け取るメールアドレス(複数指定する場合「,」区切り $to = "aa@aa.aa,bb@bb.bb";)
+// 管理者メールアドレス
 $to = "jane.doe3wtp4649@gmail.com";
-//フォームのメールアドレス入力箇所のname属性の値
-$Email = "mailAdress";
-//スパム防止のためのリファラチェック（フォームページが同一ドメインであるかどうかのチェック）(する=1, しない=0)
+//フォームのメールアドレス入力箇所のname属性
+$Email = "Email";
+//リファラチェック（スパム防止）(する=1, しない=0)
 $Referer_check = 1;
-//リファラチェックを「する」場合のドメイン
+//ドメイン
 $Referer_check_domain = "yuumin.chu.jp";
 //---------------------------　必須設定　ここまで　------------------------------------
 
-//---------------------- 任意設定　以下は必要に応じて設定してください ------------------------
+//---------------------- 任意設定　必要に応じて設定 ------------------------
 // 管理者宛のメールで差出人を送信者のメールアドレスにする(する=1, しない=0)
-// する場合、メール入力欄のname属性の値を「$Email」で指定した値にする
 $userMail = 1;
 // Bccで送るメールアドレス(複数指定する場合「,」で区切る 例 $BccMail = "aa@aa.aa,bb@bb.bb";)
 $BccMail = "";
@@ -30,35 +29,31 @@ $subject = "Inquiries from My CV";
 // 送信確認画面の表示(する=1, しない=0)
 $confirmDsp = 1;
 
-// 送信完了後に自動的に指定のページ(サンクスページなど)に移動する(する=1, しない=0)
-// CV率を解析したい場合などはサンクスページを別途用意し、URLをこの下の項目で指定してください。
-// 0にすると、デフォルトの送信完了画面が表示されます。
+// 送信完了後にサンクスページに移動する(する=1, しない=0)
 $jumpPage = 1;
-// 送信完了後に表示するページURL（上記で1を設定した場合のみ）
+// 送信完了後に表示するページURL
 $thanksPage = "http://yuumin.chu.jp/mycv/thanks.html";
 // 必須入力項目を設定する(する=1, しない=0)
 $requireCheck = 1;
-/* 必須入力項目(入力フォームで指定したname属性の値を指定（上記で1を設定した場合のみ）
-複数の場合カンマ区切り。フォーム側と順番を合わせると良いです。*/
+/* 必須入力項目(入力フォームで指定したname属性の値を指定
+複数の場合カンマ区切り。フォーム側と順番を合わせる */
 $require = array('Email','Subject','Message');
 
 //----------------------------------------------------------------------
 //  自動返信メール設定(START)
 //----------------------------------------------------------------------
-
 // 差出人に送信内容確認メール（自動返信メール）を送る(送る=1, 送らない=0)
-// 送る場合は、フォーム側のメール入力欄のname属性の値が上記「$Email」で指定した値と同じである必要がある
 $remail = 0;
-//自動返信メールの送信者欄に表示される名前
+// 自動返信メールの送信者欄に表示される名前
 $refrom_name = "";
-// 差出人に送信確認メールを送る場合のメールのタイトル（上記で1を設定した場合のみ）
+// 差出人に送信確認メールを送る場合のメールのタイトル
 $re_subject = "Thanks";
 
 //自動返信メールの宛名（「○○様」の表示で使用）
 //未使用
 $dsp_name = '';
 
-//自動返信メールの冒頭の文言 ※日本語部分のみ変更可
+//自動返信メールの冒頭の文言
 $remail_text = <<< TEXT
 
 Thank you for your inquiry.
@@ -71,7 +66,7 @@ TEXT;
 
 //自動返信メールに署名（フッター）を表示(する=1, しない=0)
 $mailFooterDsp = 0;
-//上記で「1」を選択時に表示する署名（フッター）
+//署名（フッター）
 $mailSignature = <<< FOOTER
 
 ──────────────────────
@@ -84,7 +79,6 @@ URL: http://yuumin.chu.jp/mycv/index.html/
 
 FOOTER;
 
-
 //----------------------------------------------------------------------
 //  自動返信メール設定(END)
 //----------------------------------------------------------------------
@@ -93,7 +87,8 @@ FOOTER;
 $mail_check = 1;
 //全角英数字→半角変換を行うかどうか。(する=1, しない=0)
 $hankaku = 0;
-//全角英数字→半角変換を行う項目のname属性の値（name="○○"の「○○」部分） 未使用
+//全角英数字→半角変換を行う項目のname属性の値
+//未使用
 $hankaku_array = array('','');
 //------------------------------- 任意設定ここまで ---------------------------------------------
 
@@ -466,13 +461,13 @@ function requireCheck($require){
 						
 					}
 					if($connectEmpty > 0){
-						$res['errm'] .= "<p class=\"error_messe\">【".h($key)."】は必須項目です。</p>\n";
+						$res['errm'] .= "<p class=\"error_messe\">【".h($key)."】 is mandatory to enter.</p>\n";
 						$res['empty_flag'] = 1;
 					}
 				}
 				//デフォルト必須チェック
-				elseif($val == ''){
-					$res['errm'] .= "<p class=\"error_messe\">【".h($key)."】は必須項目です。</p>\n";
+				elseif($val == ''){\
+					$res['errm'] .= "<p class=\"error_messe\">【".h($key)."】 is mandatory to enter.</p>\n";
 					$res['empty_flag'] = 1;
 				}
 				
@@ -482,7 +477,7 @@ function requireCheck($require){
 			
 		}
 		if($existsFalg != 1){
-				$res['errm'] .= "<p class=\"error_messe\">【".$requireVal."】が未選択です。</p>\n";
+				$res['errm'] .= "<p class=\"error_messe\">【".$requireVal."】 is unselected.</p>\n";
 				$res['empty_flag'] = 1;
 		}
 	}
@@ -493,7 +488,7 @@ function requireCheck($require){
 function refererCheck($Referer_check,$Referer_check_domain){
 	if($Referer_check == 1 && !empty($Referer_check_domain)){
 		if(strpos($_SERVER['HTTP_REFERER'],$Referer_check_domain) === false){
-			return exit('<p align="center">リファラチェックエラー。フォームページのドメインとこのファイルのドメインが一致しません</p>');
+			return exit('<p align="center">The domain of the form page does not match the domain of this file.</p>');
 		}
 	}
 }
