@@ -1,57 +1,72 @@
 <?php header("Content-Type:text/html;charset=utf-8"); ?>
 <?php //error_reporting(E_ALL | E_STRICT);
-
-//PHP5.1.0以上の場合のみタイムゾーンを定義
-if (version_compare(PHP_VERSION, '5.1.0', '>=')) {
-	date_default_timezone_set('Asia/Tokyo');
+if (version_compare(PHP_VERSION, '5.1.0', '>=')) {//PHP5.1.0以上の場合のみタイムゾーンを定義
+	date_default_timezone_set('Asia/Tokyo');//タイムゾーンの設定（日本以外の場合には適宜設定ください）
 }
 
 //---------------------------　必須設定　-----------------------
+
 //トップページ
 $site_top = "http://yuumin.chu.jp/mycv/index.html";
-// 管理者メールアドレス
+
+//管理者メールアドレス
 $to = "jane.doe3wtp4649@gmail.com";
-//フォームのメールアドレス入力箇所のname属性
-$Email = "Email";
-//リファラチェック（スパム防止）(する=1, しない=0)
-$Referer_check = 1;
+
+//メールアドレス入力箇所のname属性
+$Email = "mailAddress";
+
+//リファラチェック
+$Referer_check = 0;
+
 //ドメイン
 $Referer_check_domain = "yuumin.chu.jp";
-//---------------------------　必須設定　ここまで　------------------------------------
 
-//---------------------- 任意設定　必要に応じて設定 ------------------------
+//---------------------------　必須設定　------------------------------------
+
+
+//---------------------- 任意設定 ------------------------
+
 // 管理者宛のメールで差出人を送信者のメールアドレスにする(する=1, しない=0)
 $userMail = 1;
-// Bccで送るメールアドレス(複数指定する場合「,」で区切る 例 $BccMail = "aa@aa.aa,bb@bb.bb";)
+
+// Bccで送るメールアドレス
 $BccMail = "";
+
 // 管理者宛に送信されるメールのタイトル（件名）
 $subject = "Inquiries from My CV";
+
 // 送信確認画面の表示(する=1, しない=0)
 $confirmDsp = 1;
 
-// 送信完了後にサンクスページに移動する(する=1, しない=0)
+// 送信完了後に自動的に指定のページ(サンクスページなど)に移動する(する=1, しない=0)
+// 0：デフォルトの送信完了画面を表示
 $jumpPage = 1;
-// 送信完了後に表示するページURL
+
+// 送信完了後に表示するページ
 $thanksPage = "http://yuumin.chu.jp/mycv/thanks.html";
+
 // 必須入力項目を設定する(する=1, しない=0)
 $requireCheck = 1;
-/* 必須入力項目(入力フォームで指定したname属性の値を指定
-複数の場合カンマ区切り。フォーム側と順番を合わせる */
-$require = array('Email','Subject','Message');
+
+//必須入力項目(入力フォームで指定したname属性の値)
+$require = array('mailAddress','subjectText','message');
+
 
 //----------------------------------------------------------------------
 //  自動返信メール設定(START)
 //----------------------------------------------------------------------
+
 // 差出人に送信内容確認メール（自動返信メール）を送る(送る=1, 送らない=0)
 $remail = 0;
-// 自動返信メールの送信者欄に表示される名前
-$refrom_name = "";
-// 差出人に送信確認メールを送る場合のメールのタイトル
-$re_subject = "Thanks";
 
-//自動返信メールの宛名（「○○様」の表示で使用）
-//未使用
-$dsp_name = '';
+//自動返信メールの送信者欄に表示される名前
+$refrom_name = "";
+
+//送信確認メールのタイトル
+$re_subject = "Thanks.";
+
+//フォーム側の「名前」箇所のname属性（未使用）
+$dsp_name = 'Administrator';
 
 //自動返信メールの冒頭の文言
 $remail_text = <<< TEXT
@@ -66,6 +81,7 @@ TEXT;
 
 //自動返信メールに署名（フッター）を表示(する=1, しない=0)
 $mailFooterDsp = 0;
+
 //署名（フッター）
 $mailSignature = <<< FOOTER
 
@@ -79,18 +95,23 @@ URL: http://yuumin.chu.jp/mycv/index.html/
 
 FOOTER;
 
+
 //----------------------------------------------------------------------
 //  自動返信メール設定(END)
 //----------------------------------------------------------------------
 
-//メールアドレスの形式チェック。(する=1, しない=0)
+//メールアドレスの形式チェック(する=1, しない=0)
 $mail_check = 1;
-//全角英数字→半角変換を行うかどうか。(する=1, しない=0)
+
+//全角英数字→半角変換(する=1, しない=0)
 $hankaku = 0;
-//全角英数字→半角変換を行う項目のname属性の値
-//未使用
-$hankaku_array = array('','');
+
+//全角英数字→半角変換を行う項目のname属性の値（未使用）
+$hankaku_array = array('tel','money');
+
+
 //------------------------------- 任意設定ここまで ---------------------------------------------
+
 
 //----------------------------------------------------------------------
 //  関数実行、変数初期化
@@ -122,7 +143,7 @@ if(empty($errm)){
 		if($key == $Email) $post_mail = h($val);
 		if($key == $Email && $mail_check == 1 && !empty($val)){
 			if(!checkMail($val)){
-				$errm .= "<p class=\"error_messe\">【".$key."】 is an invalid email address format.</p>\n";
+				$errm .= "<p class=\"error_messe\">【".$key."】is an invalid email address format </p>\n";
 				$empty_flag = 1;
 			}
 		}
@@ -185,18 +206,18 @@ p.error_messe{
 </head>
 <body>
 
-<!-- ▲ Headerやその他コンテンツなど ▲-->
+<!-- ▲ Headerやその他コンテンツなど▲-->
 
 <!-- ▼************ 送信内容表示部 ************ ▼-->
 <div id="formWrap">
 <?php if($empty_flag == 1){ ?>
 <div align="center">
-<h4>There is an error in the input. Please check the following and correct by the "return" button.</h4>
+<h4>There is an error in the input. <br/>Please check the following and correct by the 【return】 button.</h4>
 <?php echo $errm; ?><br /><br /><input type="button" value=" return " onClick="history.back()">
 </div>
 <?php }else{ ?>
 <h3>Confirmation</h3>
-<p align="center">Please press the "send" button.</p>
+<p align="center">Please press the 【send】 button.</p>
 <form action="<?php echo h($_SERVER['SCRIPT_NAME']); ?>" method="POST">
 <table class="formTable">
 <?php echo confirmOutput($_POST);//入力内容を表示?>
@@ -219,7 +240,7 @@ p.error_messe{
 
 if(($jumpPage == 0 && $sendmail == 1) || ($jumpPage == 0 && ($confirmDsp == 0 && $sendmail == 0))) { 
 
-/* ▼▼▼送信完了画面のレイアウト ※送信完了後に指定のページに移動しない場合のみ表示▼▼▼　*/
+/* ▼▼▼送信完了画面のレイアウト　編集可 ※送信完了後に指定のページに移動しない場合のみ表示▼▼▼　*/
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
@@ -230,14 +251,15 @@ if(($jumpPage == 0 && $sendmail == 1) || ($jumpPage == 0 && ($confirmDsp == 0 &&
 <body>
 <div align="center">
 <?php if($empty_flag == 1){ ?>
-<h4>There is an error in the input. Please check the following and correct by the "return" button.</h4>
+<h4>There is an error in the input. <br/>Please check the following and correct by the 【return】 button.</h4>
 <div style="color:red"><?php echo $errm; ?></div>
 <br /><br /><input type="button" value=" return " onClick="history.back()">
 </div>
 </body>
 </html>
 <?php }else{ ?>
-Thanks.<br /><br />
+Tanks<br />
+<br /><br />
 <a href="<?php echo $site_top ;?>">Top&raquo;</a>
 </div>
 <?php copyright(); ?>
@@ -245,13 +267,13 @@ Thanks.<br /><br />
 </body>
 </html>
 <?php 
-/* ▲▲▲送信完了画面のレイアウト ※送信完了後に指定のページに移動しない場合のみ表示▲▲▲　*/
+/* ▲▲▲送信完了画面のレイアウト▲▲▲　*/
   }
 }
-//確認画面無しの場合の表示、指定のページに移動する設定の場合、エラーチェックで問題が無ければ指定ページヘリダイレクト
+//確認画面無しの場合の表示、指定ページヘリダイレクト
 else if(($jumpPage == 1 && $sendmail == 1) || $confirmDsp == 0) { 
 	if($empty_flag == 1){ ?>
-<div align="center"><h4>There is an error in the input. Please check the following and correct by the "return" button.</h4><div style="color:red"><?php echo $errm; ?></div><br /><br /><input type="button" value=" return " onClick="history.back()"></div>
+<div align="center"><h4>There is an error in the input. <br/>Please check the following and correct by the 【return】 button.</h4><div style="color:red"><?php echo $errm; ?></div><br /><br /><input type="button" value=" return " onClick="history.back()"></div>
 <?php 
 	}else{ header("Location: ".$thanksPage); }
 }
@@ -461,13 +483,13 @@ function requireCheck($require){
 						
 					}
 					if($connectEmpty > 0){
-						$res['errm'] .= "<p class=\"error_messe\">【".h($key)."】 is mandatory to enter.</p>\n";
+						$res['errm'] .= "<p class=\"error_messe\">【".h($key)."】is mandatory to enter </p>\n";
 						$res['empty_flag'] = 1;
 					}
 				}
 				//デフォルト必須チェック
-				elseif($val == ''){\
-					$res['errm'] .= "<p class=\"error_messe\">【".h($key)."】 is mandatory to enter.</p>\n";
+				elseif($val == ''){
+					$res['errm'] .= "<p class=\"error_messe\">【".h($key)."】is mandatory to enter </p>\n";
 					$res['empty_flag'] = 1;
 				}
 				
@@ -477,7 +499,7 @@ function requireCheck($require){
 			
 		}
 		if($existsFalg != 1){
-				$res['errm'] .= "<p class=\"error_messe\">【".$requireVal."】 is unselected.</p>\n";
+				$res['errm'] .= "<p class=\"error_messe\">【".$requireVal."】is mandatory to enter </p>\n";
 				$res['empty_flag'] = 1;
 		}
 	}
@@ -488,7 +510,7 @@ function requireCheck($require){
 function refererCheck($Referer_check,$Referer_check_domain){
 	if($Referer_check == 1 && !empty($Referer_check_domain)){
 		if(strpos($_SERVER['HTTP_REFERER'],$Referer_check_domain) === false){
-			return exit('<p align="center">The domain of the form page does not match the domain of this file.</p>');
+			return exit('<p align="center">The domain of the form page does not match the domain of this file </p>');
 		}
 	}
 }
