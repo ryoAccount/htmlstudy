@@ -1,0 +1,36 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/binding.css">
+    <title>Binding</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Binding</h1>
+        <p>
+            Hello <span class="bg" v-bind:class="{large:isLarge}">vue.js</span>
+        </p>
+        <p>
+            Hello <span v-bind:class="[largeClass, dangerClass]">vue.js</span>
+        </p>
+        <p>
+            Hello <span v-bind:class="obj">vue.js</span>
+        </p>
+        <p>
+            Hello <span v-bind:class="isLarge ? large : danger">vue.js</span>
+        </p>
+        <p>
+            Hello <span v-bind:style="{color: color, fontSize: size + 'px'}">vue.js</span>
+        </p>
+        <p>
+            Hello <span v-bind:style="obj2">vue.js</span>
+        </p>
+
+        <pre>{{$data}}</pre>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="./js/binding.js"></script>
+</body>
+</html>

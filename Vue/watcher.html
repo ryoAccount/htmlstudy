@@ -1,0 +1,38 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/watcher.css">
+    <title>Watcher</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Watcher</h1>
+        <p>{{msg}}</p>
+        <input type="text" v-model="msg">
+
+        <br>
+
+        <input type="text" v-model="km">km
+        <input type="text" v-model="m">m
+        <input type="text" v-model="mm">mm
+
+        <br>
+
+        first:<input type="text" v-model="first">
+        <br>
+        last:<input type="text" v-model="last">
+        <p>full:{{full}}</p>
+
+        <br>
+
+        <ul>
+            <li v-for="c in colors">{{c.name}}</li>
+        </ul>
+        <pre>{{$data}}</pre>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="./js/watcher.js"></script>
+</body>
+</html>
