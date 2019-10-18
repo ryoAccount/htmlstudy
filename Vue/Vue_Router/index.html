@@ -104,11 +104,13 @@
         const router = new VueRouter({
             routes: [
                 {
+                    name: 'page-a',
                     path: '/a',
                     // redirect: '/b'
                     // redirect: { name: 'page-b'}
-                    component: A,
-                    alias: '/b'
+                    // component: A,
+                    // alias: '/b'
+                    component: A
                 },
                 {
                     name: 'page-b',
