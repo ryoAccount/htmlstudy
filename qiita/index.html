@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Qiita API</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Qiita API</h1>
+        <p>
+            <input type="text" v-model="keyword">
+        </p>
+        <p>
+            {{msg}}
+        </p>
+        <ol>
+            <li v-for="item in items">
+                <a v-bind:href="item.url" target="_blank">{{item.title}}</a>
+            </li>
+        </ol>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.19.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                items: null,
+                keyword: '',
+                msg: ''
+            },
+            watch: {
+                keyword: function(){
+                    this.msg = 'Waiting for typing...'
+                    this.debouncedGetAnswer()
+                }
+            },
+            created: function() {
+                this.debouncedGetAnswer = _.debounce(this.getAnswer, 1000)
+            },
+            methods: {
+                getAnswer: function() {
+                    if(this.keyword === '') {
+                        this.items = null
+                        this.msg = ''
+                        return
+                    }
+                    
+                    this.msg = 'Loading...'
+                    var vm = this
+                    var params = { page: 1, perPage: 20, query: this.keyword}
+                    axios.get('https://qiita.com/api/v2/items',{params})
+                    .then(function(res){
+                        vm.items = res.data
+                    })
+                    .catch(function(err){
+                        vm.msg = 'Error...'
+                    })
+                    .finally(function(){
+                        if (vm.items.length == 0) {
+                            vm.msg = 'No result...'
+                        } else {
+                            vm.msg = ''
+                        }
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>
