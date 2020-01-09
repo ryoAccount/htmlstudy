@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>○×ゲーム</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        #table {
+            margin:0 auto;
+            border-collapse: collapse;
+            border: 3px solid #ccc;
+        }
+
+        #table td {
+            border:1px solid #ccc;
+            height: 80px;
+            width: 80px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        #playerMsg {
+            text-align: center;
+        }
+
+        #resetButtun {
+            position: relative;
+            display: inline-block;
+            padding: 0.25em 0.5em;
+            text-decoration: none;
+            color: #FFF;
+            background: #fd9535;/*背景色*/
+            border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
+            border-radius: 4px;/*角の丸み*/
+            box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+            font-weight: bold;
+        }
+
+        #resetButtun:active {
+            border-bottom: solid 2px #fd9535;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <table id="table">
+            <tr v-for="(row,rowsIndex) in states">
+                <td v-for="(state,colsIndex) in row" @click="onSelect(rowsIndex, colsIndex)">
+                    <div style="color:#f00;" v-if="state==1">○</div>
+                    <div style="color:#00f;" v-if="state==2">×</div>
+                </td>
+            </tr>
+        </table>
+
+        <div id="playerMsg">
+            <div style="color:#f00;" v-if="playerId==1">「○ プレイヤー のターンです」</div>
+            <div style="color:#00f;" v-if="playerId==2">「× プレイヤー のターンです」</div>
+            <div v-if="msg">{{msg}}</div>
+            <button id="resetButtun" @click="init()">リセットする</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                states: [],
+                msg: '',
+                endFlg: false,
+                playerId: 1 // 1:○ 2:×
+            },
+            // マウントされたらすぐ初期化
+            mounted: function() {
+                this.init();
+            },
+            methods: {
+                // 初期化
+                init: function() {
+                    this.states = [
+                        [-1,-1,-1,-1,-1,-1],
+                        [-1,-1,-1,-1,-1,-1],
+                        [-1,-1,-1,-1,-1,-1],
+                        [-1,-1,-1,-1,-1,-1],
+                        [-1,-1,-1,-1,-1,-1],
+                        [-1,-1,-1,-1,-1,-1]
+                    ];
+                    this.msg = '縦・横・斜めのいずれかに○/×を4つ並べれば勝利です！';
+                    this.endFlg = false;
+                    this.playerId = 1;
+                },
+
+                onSelect: function(rowsIndex, colsIndex) {
+                    if(this.endFlg) {
+                        // 何もしない
+                    } else if(this.states[rowsIndex][colsIndex] != -1) {
+                        this.msg = '既に選択されています！';
+                    } else {
+                        this.msg = '';
+                        var states = JSON.parse(JSON.stringify(this.states))
+                        states[rowsIndex][colsIndex] = this.playerId;
+                        this.states = states;
+                        this.playerId = (this.playerId == 1) ? 2 : 1;
+
+                        var winnerId = this.getWinnerId();
+
+                        if(winnerId != -1) {
+
+                            playerIds = {
+                                1: '○',
+                                2: '×'
+                            };
+                            this.msg = playerIds[winnerId] +' の勝ち！';
+                            this.endFlg = true;
+                        
+                        } else if(this.isDraw()) {
+                            this.msg = '引き分け！';
+                            this.endFlg = true;
+                        }
+                    }
+                },
+                getWinnerId: function() {
+                    for(var i = 0; i < 6 ; i++){
+                        // 横の列
+                        var row = this.states[i];
+                        var rowResult = this.isStatesFilled(row);
+                        if(rowResult != -1) {
+                            return rowResult;
+                        }
+                        // 縦の列
+                        var col = [
+                            this.states[0][i],
+                            this.states[1][i],
+                            this.states[2][i],
+                            this.states[3][i],
+                            this.states[4][i],
+                            this.states[5][i]
+                        ];
+                        var colResult = this.isStatesFilled(col);
+                        if(colResult != -1) {
+                            return colResult;
+                        }
+                    }
+
+                    for(var i = 0; i < 3 ; i++) {
+                        for(var j = 0; j < 3 ; j++) {
+                            // ななめ
+                            var skew1 = [
+                                this.states[i][j],
+                                this.states[i+1][j+1],
+                                this.states[i+2][j+2],
+                                this.states[i+3][j+3],
+                                -1, // dummy
+                                -1  // dummy
+                            ];
+                            var slew1Result = this.isStatesFilled(skew1);
+                            if(slew1Result != -1) {
+                                return slew1Result;
+                            }
+
+                            var skew2 = [
+                                this.states[i][5-j],
+                                this.states[i+1][4-j],
+                                this.states[i+2][3-j],
+                                this.states[i+3][2-j],
+                                -1, // dummy
+                                -1  // dummy
+                            ];
+                            var slew2Result = this.isStatesFilled(skew2);
+                            if(slew2Result != -1) {
+                                return slew2Result;
+                            }
+                        }
+                    }
+                    // 勝者が決まっていない
+                    return -1;
+                },
+
+                // 1列の中に4つ連続で同じ値が並んでいれば勝者が確定
+                isStatesFilled: function(states) {
+                    for(var i = 0; i < 3 ; i++) {
+                        if( states[i] != -1 &&
+                            states[i] == states[i+1] &&
+                            states[i+1] == states[i+2] &&
+                            states[i+2] == states[i+3] ) {
+                            return states[i];
+                        }
+                    }
+                    return -1;
+                },
+
+                // すべて選択済みなら引き分け
+                isDraw: function() {
+                    for(var i in this.states) {
+                        var row = this.states[i];
+                        for(var j in row) {
+                            var state = row[j];
+                            if(state == -1) {
+                                return false;
+                            }
+                        }
+                    }
+                    return true;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
