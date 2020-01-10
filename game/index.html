@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <style>
+        body {
+            background-image: url(bg.jpg);
+        }
+        .addMsg {
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="tile is-vertical is-6">
+        <div class="tile">
+            <div class="tile is-parent is-vertical">
+                <h1 class="title addMsg">BoardGame</h1>
+                <p class="addMsg">Everything created with Vue.js.</p>
+                <br>
+                
+                <article class="tile is-child notification is-info">
+                    <p class="title">
+                        <a href="marubatsu/index.html">Four-by-one</a>
+                    </p>
+                    <p class="subtitle">A game where two players alternately write "○" and "×" on a 6x6 grid and arrange 4 to win.</p>
+                    <figure class="image is-256x256">
+                        <a href="marubatsu/index.html"><img src="marubatsu/marubatsu.png"></a>
+                    </figure>
+                </article>
+                <article class="tile is-child notification is-primary">
+                    <p class="title">
+                        <a href="othello/index.html">Othello</a>
+                    </p>
+                    <p class="subtitle">In this game, you place black and white stones on the board and compete for which stone will be placed more in the end.</p>
+                    <figure class="image is-256x256">
+                        <a href="othello/index.html"><img src="othello/othello.jpg"></a>
+                    </figure>
+                </article>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
