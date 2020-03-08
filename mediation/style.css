@@ -32,14 +32,10 @@
     transform: translate(-50%, -50%) rotate(-90deg);
     pointer-events: none;
 }
-/* .play-container img {
-    position: relative;
-    margin-bottom: 30%;
-} */
 
 .time-display {
     position: absolute;
-    bottom: 10%;
+    bottom: 5%;
     color: white;
     font-size: 50px;
 }
