@@ -8,24 +8,24 @@
     "orientation": "portrait-primary",
     "icons": [
         {
-            "src": "/images/icons/butterfly-64-202340.png",
+            "src": "/mediation/images/icons/butterfly-64-202340.png",
             "type": "image/png", "sizes": "64x64"
         },
         {
-            "src": "/images/icons/butterfly-72-202340.png",
+            "src": "/mediation/images/icons/butterfly-72-202340.png",
             "type": "image/png", "sizes": "72x72"
         },
         {
-            "src": "/images/icons/butterfly-120-202340.png",
+            "src": "/mediation/images/icons/butterfly-120-202340.png",
             "type": "image/png","sizes": "120x120"
         },
         {
-            "src": "/images/icons/butterfly-144-202340.png",
+            "src": "/mediation/images/icons/butterfly-144-202340.png",
             "type": "image/png", "sizes": "144x144"
         },
         {
-            "src": "/images/icons/butterfly-152-202340.png",
+            "src": "/mediation/images/icons/butterfly-152-202340.png",
             "type": "image/png", "sizes": "152x152"
         }
-        ]
-  }
+    ]
+}

@@ -67,10 +67,12 @@ const app = () => {
     if ("serviceWorker" in navigator) {
         window.addEventListener("load", function() {
             navigator.serviceWorker
-                .register("/serviceWorker.js")
+                .register("/mediation/serviceWorker.js")
                 .then(res => console.log("service worker registered"))
                 .catch(err => console.log("service worker not registered", err))
         })
+    } else {
+        console.log("service worker not exist");
     }
 
 };
