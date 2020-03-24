@@ -16,6 +16,13 @@
 	border: none;
 	border-bottom: 1px solid white;
 }
+
+@media screen and (max-width: 600px) {
+	.cp_sl06 {
+		color: white;
+	}
+}
+
 .cp_sl06:focus {
 	outline: none;
 	border-bottom: 1px solid rwhite;
