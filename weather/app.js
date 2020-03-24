@@ -1,4 +1,5 @@
 const locationList = [
+    {"location": "current", "lat": 0, "long": 0},
     {"location": "osaka", "lat": 34.6918, "long": 135.5051},
     {"location": "kanazawa", "lat": 36.5727, "long": 136.6322},
     {"location": "saitama", "lat": 35.8594, "long": 139.6063},
@@ -11,13 +12,32 @@ const locationList = [
 ];
 
 window.addEventListener("load", () => {
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+            .register("/weather/serviceWorker.js")
+            .then(res => console.log("service worker registered"))
+            .catch(err => console.log("service worker not registered", err))
+    } else {
+        console.log("service worker not exist");
+    }
+
     getWeather(35.6951, 139.7539);
 });
 
 function selectLocation(value) {
     locationList.forEach(item => {
         if (item.location === value) {
-            getWeather(item.lat, item.long);
+            if (value === "current") {
+                if(navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(position => {
+                        getWeather(position.coords.longitude, position.coords.latitude)
+                    });
+                } else {
+                    window.alert("Please enable location information.");
+                }
+            } else {
+                getWeather(item.lat, item.long);
+            }
         }
     })
 }

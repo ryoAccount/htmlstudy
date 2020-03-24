@@ -7,12 +7,14 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="select.css">
+    <link rel="manifest" href="manifest.json" />
     <title>Weather</title>
 </head>
 <body>
     <div class="location">
         <div class="location-timezone cp_ipselect">
             <select id="locationSelect" class="cp_sl06" required onchange="selectLocation(value)">
+                <option value="current">現在地</option>
                 <option value="osaka">大阪</option>
                 <option value="kanazawa">金沢</option>
                 <option value="saitama">埼玉</option>
