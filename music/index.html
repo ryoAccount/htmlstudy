@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Play List</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Play List</h1>
+        </header>
+
+        <div class="musicHeader">
+            <div class="pictDummy">
+            </div>
+            <div class="titlearea">
+                <span class="artist">Title / Artist</span>
+            </div>
+            <div class="songlength">
+                <span>Song Length</span>
+            </div>
+        </div>
+
+        <div v-for="item in playlist" class="musicArea" :class="{backcolor: item.isPlay}" @click="playMusic(item.id)">
+            <div class="pict">
+                <img :src="item.path" alt="jacket picture">
+            </div>
+            <div class="titlearea">
+                <span class="title">{{item.title}}</span>
+                <span class="artist">{{item.artist}}</span>
+            </div>
+            <div class="songlength">
+                <span>{{item.songLength}}</span>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footerArea">
+                <span class="playTitle">{{playTitle}}</span>
+                <span> / </span>
+                <span class="playArtist">{{playArtist}}</span>
+            </div>
+            <div class="audio">
+                <audio class="musicAudio" controls @ended="playMusic(playId + 1)">
+                    <source :src="musicPath">
+                </audio>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="app.js"></script>
+</body>
+</html>
