@@ -45,7 +45,7 @@
                 <span class="playArtist">{{playArtist}}</span>
             </div>
             <div class="audio">
-                <audio class="musicAudio" controls @ended="playMusic(playId + 1)">
+                <audio class="musicAudio" preload="none" controls @ended="playMusic(playId + 1)">
                     <source :src="musicPath">
                 </audio>
             </div>
