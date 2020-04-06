@@ -12,23 +12,37 @@ header {
     align-items: center;
     width: 100%;
     z-index: 2;
-    background-color: black;
+    background: #191919;
 }
 
 h1, p {
-    color: white;
+    color: aquamarine;
     text-align: center;
-    font-family: monospace;
+    font-family: 'Baloo Thambi 2', cursive;
 }
 
-.musicHeader {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-top: 1em;
-    padding-left: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
+@media screen and (max-width: 600px) {
+    .musicHeader {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-top: 1em;
+        padding-left: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .musicHeader {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-top: 1em;
+        padding-left: 1em;
+        margin-left: 5em;
+        margin-right: 5em;
+    }
 }
 
 .pictDummy {
@@ -38,15 +52,31 @@ h1, p {
     width: 50px;
     height: 0px;
 }
-.musicArea {
-    border-bottom: lavender solid 0.1px ;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
-    cursor: pointer;
+
+@media screen and (max-width: 600px) {
+    .musicArea {
+        border-bottom: lavender solid 0.1px ;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .musicArea {
+        border-bottom: lavender solid 0.1px ;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1em;
+        margin-left: 5em;
+        margin-right: 5em;
+        cursor: pointer;
+    }
 }
 
 .musicArea:hover {
@@ -81,15 +111,16 @@ h1, p {
 
 .title {
     color: aliceblue;
-    font-family: sans-serif;
+    font-family: 'Baloo Thambi 2', cursive;
     font-size: 20px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .artist {
     color: lightcyan;
-    font-family: monospace;
+    font-family: cursive;
     font-size: 12px;
     white-space: nowrap;
     overflow: hidden;
@@ -98,7 +129,7 @@ h1, p {
 
 .songlength {
     color: lightcyan;
-    font-family: monospace;
+    font-family: cursive;
     font-size: 12px;
 }
 
@@ -108,6 +139,7 @@ footer {
     width: 100%;
     z-index: 2;
     background-color: black;
+    padding-top: 0.2em;
 }
 
 .footerArea {
@@ -127,11 +159,11 @@ footer {
 .playTitle {
     font-family: sans-serif;
     font-size: 20px;
-    font-family: monospace;
+    font-family: 'Baloo Thambi 2', cursive;
 }
 
 .playArtist {
     font-family: monospace;
     font-size: 12px;
-    font-family: monospace;
+    font-family: cursive;
 }
