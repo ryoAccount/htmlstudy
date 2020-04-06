@@ -76,9 +76,9 @@
             </tr>
         </table>
         <div id="playerMsg">
-            <p><stone :type="currentStoneId"></stone> を置いてください</p>
+            <p>Please put <stone :type="currentStoneId"></stone> .</p>
             <p v-bind:style="{visibility: visibleValue, color: 'red'}">　{{msg}}　</p>
-            <button id="resetButtun" @click="initStone()">リセットする</button>
+            <button id="resetButtun" @click="initStone()">Reset</button>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
@@ -183,7 +183,7 @@
                         this.stones = newStones;
 
                         if(!this.changeStone(x, y)) {
-                            this.msg = '置くことができません！';
+                            this.msg = 'Can not put!';
                             this.stones[x-1][y-1] = ' '; // 置けないので元に戻す
                         } else {
                             this.currentStoneId *= -1;  // 白黒交代
@@ -193,25 +193,25 @@
 
                             if(stoneCounts.total == fullCount) {
                                 if(stoneCounts.black > stoneCounts.white) {
-                                    this.msg = '●の勝ち！';
+                                    this.msg = '● Win!!';
                                 } else if(stoneCounts.black < stoneCounts.white) {
-                                    this.msg = '○の勝ち！';
+                                    this.msg = '○ Win!!';
                                 } else {
-                                    this.msg = '引き分け！';
+                                    this.msg = 'Draw!!';
                                 }
                                 this.endFlg = true; // ゲーム終了
                             
                             } else if(!this.checkStone()) {
                                 if(this.currentStoneId == -1) {
-                                    this.msg = '●を置ける場所がありません！';
+                                    this.msg = 'No place to put ●!';
                                 } else {
-                                    this.msg = '○を置ける場所がありません！';
+                                    this.msg = 'No place to put ○!';
                                 }
                                 this.currentStoneId *= -1;  // 白黒交代
                             }
                         }
                     } else {
-                        this.msg = '既に置かれています！';
+                        this.msg = 'Already placed!';
                     }
                 },
                 changeStone(x, y) {
