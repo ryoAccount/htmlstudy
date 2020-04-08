@@ -111,7 +111,7 @@ h1, p {
 
 .title {
     color: aliceblue;
-    font-family: 'Baloo Thambi 2', cursive;
+    font-family: 'Baloo Thambi 2', sans-serif;
     font-size: 20px;
     white-space: nowrap;
     overflow: hidden;
@@ -120,7 +120,7 @@ h1, p {
 
 .artist {
     color: lightcyan;
-    font-family: cursive;
+    font-family: 'Baloo Thambi 2', monospace;
     font-size: 12px;
     white-space: nowrap;
     overflow: hidden;
@@ -129,7 +129,7 @@ h1, p {
 
 .songlength {
     color: lightcyan;
-    font-family: cursive;
+    font-family: 'Baloo Thambi 2', monospace;
     font-size: 12px;
 }
 
@@ -157,13 +157,11 @@ footer {
 }
 
 .playTitle {
-    font-family: sans-serif;
-    font-size: 20px;
     font-family: 'Baloo Thambi 2', cursive;
+    font-size: 20px;
 }
 
 .playArtist {
-    font-family: monospace;
+    font-family: 'Baloo Thambi 2', monospace;
     font-size: 12px;
-    font-family: cursive;
 }
