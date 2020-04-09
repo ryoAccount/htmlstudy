@@ -1,0 +1,8 @@
+* {
+    margin: 0;
+}
+
+h2 {
+    top: 0;
+    position: fixed;
+}
