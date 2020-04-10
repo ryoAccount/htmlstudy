@@ -1,7 +1,7 @@
 var c = document.createElement("canvas");
 var ctx = c.getContext("2d");
-c.width = window.innerWidth;
-c.height = window.innerHeight - 5;
+c.width = window.innerWidth - 15;
+c.height = window.innerHeight - 15;
 document.body.appendChild(c);
 
 var perm = [];
@@ -38,20 +38,22 @@ var player = new function() {
             grounded = 1;
         }
 
-        if(grounded && Math.abs(this.rot) > Math.PI * 0.5) {
+        if(!playing || grounded && Math.abs(this.rot) > Math.PI * 0.5) {
+            playing = false;
             this.rSpeed = 5;
+            k.ArrowUp = 1;
             this.x -= speed * 2.5;
         }
 
         var angle = Math.atan2((p2 - 11) - this.y, (this.x + 5) - this.x);
         this.y += this.ySpeed;
 
-        if(grounded) {
+        if(playing && grounded) {
             this.rot -= (this.rot - angle) * 0.5;
             this.rSpeed = this.rSpeed - (angle - this.rot);
         }
 
-        this.rSpeed += 1 * 0.05;
+        this.rSpeed += (k.ArrowLeft - k.ArrowRight) * 0.05;
         this.rot -= this.rSpeed * 0.1;
         if(this.rot > Math.PI) {
             this.rot = -Math.PI;
@@ -69,8 +71,12 @@ var player = new function() {
 }
 
 var t = 0;
+var speed = 0;
+var playing = true;
+var k = {ArrowUp:0, ArrowDown:0, ArrowLeft:0, ArrowRight:0};
 function loop() {
-    t += 5;
+    speed -= (speed - (k.ArrowUp - k.ArrowDown)) * 0.01;
+    t += 5 * speed;
     ctx.fillStyle = "#17f";
     ctx.fillRect(0, 0, c.width, c.height);
 
@@ -88,19 +94,7 @@ function loop() {
     requestAnimationFrame(loop);
 }
 
+onkeydown = d => k[d.key] = 1;
+onkeyup = d => k[d.key] = 0;
+
 loop();
-
-const startDate = new Date();
-function playTime() {
-    let now = new Date();
-    let sec = parseInt((now.getTime() - startDate.getTime()) / 1000) % 60;
-
-    if ( sec < 10) {
-        sec = "0" + sec;
-    }
-
-    document.getElementById("times").innerHTML = sec + " seconds."
-
-    this.setTimeout(playTime(), 1000);
-}
-playTime();
