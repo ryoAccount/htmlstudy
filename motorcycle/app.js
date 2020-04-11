@@ -20,13 +20,18 @@ while (roadValue.length < ROAD_LINE_MAX_VALUE) {
 var roadLine = (a,b,c) => a + (b-a) * (1 - Math.cos(c * Math.PI))/2;
 var noise = x => {
     x = x * 0.01 % ROAD_LINE_MAX_VALUE;
-    return roadLine(roadValue[Math.floor(x)], roadValue[Math.ceil(x)], x - Math.floor(x));
+    let noiseValue = roadLine(roadValue[Math.floor(x)], roadValue[Math.ceil(x)], x - Math.floor(x));
+    // たまに値がバグる
+    if(isNaN(noiseValue)) {
+        noiseValue = 5;
+    }
+    return noiseValue
 }
 
 var player = new function() {
     this.x = c.width/4;
-    this.y = 0;
-    this.ySpeed = 0;
+    this.y = 100;
+    this.ySpeed = 5;
     this.rot = 0;
     this.rSpeed = 0;
     this.isGround = false;
@@ -74,22 +79,37 @@ var player = new function() {
 
     this.jump = function() {
         if (this.isGround) {
-            this.y += 2.5;
             this.ySpeed -= 1.5;
-            this.rot -= this.rSpeed * 0.01;
+            this.y += 2;
             this.isGround = false;
         }
 
         ctx.save();
-        ctx.translate(this.x, this.y);
+        // ctx.translate(this.x, this.y);
         // ctx.rotate(this.rot);
         ctx.drawImage(this.img, -35, -35, 55, 55);
         ctx.restore();
     }
+
+    // this.status = function() {
+    //     console.log("x      :" , this.x);
+    //     console.log("y      :" , this.y);
+    //     console.log("ySpeed :" , this.ySpeed);
+    //     console.log("rot    :" , this.rot);
+    //     console.log("rSpeed :" , this.rSpeed);
+    //     console.log("isGround:" , this.isGround);
+
+    //     console.log("------------------");
+    // }
 }
 
 function loop() {
-    screenSpeed += 5;
+    // 画面が小さい時はやや遅くする
+    if (c.width <= 500) {
+        screenSpeed += 4;
+    } else {
+        screenSpeed += 5;
+    }
     ctx.fillStyle = "#17f";
     ctx.fillRect(0, 0, c.width, c.height);
 
@@ -99,7 +119,6 @@ function loop() {
     for (let i = 0 ; i < c.width ; i++) {
         ctx.lineTo(i, c.height - noise(screenSpeed + i) * 0.25);
     }
-
     ctx.lineTo(c.width, c.height);
     ctx.fill();
 
@@ -110,10 +129,7 @@ loop();
 
 const startDate = new Date();
 function playTime() {
-    let sec = parseInt((new Date().getTime() - startDate.getTime()) / 1000);
-
-    document.getElementById("times").innerHTML = sec + " seconds."
-
+    document.getElementById("times").innerHTML = parseInt((new Date().getTime() - startDate.getTime()) / 1000) + " seconds."
     this.setTimeout("playTime()", 1000);
 
 }
@@ -125,4 +141,3 @@ window.addEventListener('keyup', function() {
 window.addEventListener('touchstart', function() {
     player.jump();
 });
-
