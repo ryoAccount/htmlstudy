@@ -68,15 +68,15 @@
             <div class="col-md-10 col-md-offset-1">
               <div class="row">
                 <div class="col-xs-12 col-md-6">
-                  <h3>I′m a FrontEnd Engineer.</h3>
+                  <h3>I′m a <span class="highlight">FrontEnd Engineer</span>.</h3>
                   <p>
-                    Mainly good at development with Vue.js or vanilla JavaScript. I create websites every day, even in private.
+                    Mainly good at development with <span class="box">Vue.js</span> or vanilla JavaScript. I create websites every day, even in private.
                   </p>
-                  <h3>I have both Developer and Manager skills.</h3>
+                  <h3>I have both <span class="highlight">Developer and Manager skills</span>.</h3>
                   <p>
-                    Good at HTML, CSS and Javascript. HTML5 Professional Lv1/Lv2 certified. Leader experience of more than 10 members.
+                    Good at HTML, CSS and Javascript. <span class="box">HTML5 Professional Lv1/Lv2</span> certified. <span class="box">Leader experience</span> of more than 10 members.
                   </p>
-                  <h3>I want to be Web Director in the future.</h3>
+                  <h3>I want to be <span class="highlight">Web Director</span> in the future.</h3>
                   <p>
                     Plan and create world-famous web applications like Twitter and Facebook.
                   </p>
@@ -107,6 +107,23 @@
   document.addEventListener("DOMContentLoaded", function (event) {
      navActivePage();
   });
+</script>
+<script type="module">
+  import { annotate } from 'https://unpkg.com/rough-notation?module';
+
+  for (let e of document.querySelectorAll('.highlight')) {
+    const highlight = annotate(e, { type: 'highlight' });
+    highlight.color = 'yellow';
+    highlight.animationDuration = 1500;
+    highlight.show();
+  }
+
+  for (let e of document.querySelectorAll('.box')) {
+    const box = annotate(e, { type: 'box' });
+    box.color = 'green';
+    box.animationDuration = 2000;
+    box.show();
+  }
 </script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
