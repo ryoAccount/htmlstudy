@@ -1,4 +1,4 @@
-#vanta {
+#home {
     width: 100%;
     height: 100vh;
     position: absolute;
@@ -126,7 +126,7 @@
     }
 
     .menu-container input:checked ~ .menu {
-        animation: fadeIn 1.0s ease 0s 1 normal;
+        animation: fadeInMenuLink 1.0s ease 0s 1 normal;
         display: inline;
         opacity: 0.8;
         text-shadow:
@@ -139,7 +139,7 @@
             -1px 0px 1px #000,
             0px -1px 1px #000;
     }
-    @keyframes fadeIn {
+    @keyframes fadeInMenuLink {
         0% {opacity: 0}
         100% {opacity: 0.8}
     }
