@@ -27,108 +27,65 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/home.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
 
-  <div id="vanta"></div>
+  <nav class="menu-container">
+    <!-- burger menu -->
+    <input type="checkbox" aria-label="Toggle menu" />
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <!-- menu items -->
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="#home">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#works">
+            Works
+          </a>
+        </li>
+        <li>
+          <a href="#about">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            Contact
+          </a>
+        </li>
+      </ul>
+      <ul>
+      </ul>
+    </div>
+  </nav>
+  
+  <div id="vanta">
+    <div class="hello">
+      <h1 class="title">M Y C V</h1>
+      <!-- created by R.matsunami . -->
+    </div>
+  </div>
 
+  <!-- Vanta -->
   <script src="js/vendor/three.r119.min.js"></script>
   <script src="js/vanta/vanta.globe.min.js"></script>
   <script src="js/vanta/vanta.net.min.js"></script>
   <script src="js/vanta/vanta.cells.min.js"></script>
   <script src="js/vanta/vanta.rings.min.js"></script>
   <script src="js/vanta/vanta.halo.min.js"></script>
-  <script>
-    switch(Math.floor(Math.random() * 10)) {
-      case 0:
-      case 1:
-        VANTA.NET({
-          el: "#vanta",
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00
-        })
-        break;
-      case 2:
-      case 3:
-        VANTA.GLOBE({
-          el: "#vanta",
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00
-        })
-        break;
-      case 4:
-      case 5:
-        VANTA.CELLS({
-          el: "#vanta",
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          color1: 0x1b26b3,
-          color2: 0xaea628
-        })
-        break;
-      case 6:
-      case 7:
-        VANTA.RINGS({
-          el: "#vanta",
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          backgroundColor: 0x1e212f,
-          color: 0x76cc13
-        })
-        break;
-      case 8:
-      case 9:
-        VANTA.HALO({
-          el: "#vanta",
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          baseColor: 0xc01079,
-          backgroundColor: 0x1e212f,
-          amplitudeFactor: 1.50,
-          size: 1.50
-        })
-        break;
-      default:
-        VANTA.HALO({
-          el: "#vanta",
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          baseColor: 0xc01079,
-          backgroundColor: 0x1e212f,
-          amplitudeFactor: 1.50,
-          size: 1.50
-        })
-    }
-  </script>
+
+  <script src="js/home.js"></script>
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
 
