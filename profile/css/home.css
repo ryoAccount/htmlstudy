@@ -25,7 +25,6 @@
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    /* background: #272a2f; */
     opacity: 0.8;
     color: #e1dfdf;
     padding: 10px;
@@ -115,22 +114,34 @@
     .menu {
         position: absolute;
         box-sizing: border-box;
-        width: 260px;
-        right: -300px;
+        width: 130px;
         top: 0;
-        margin: -20px;
-        padding: 75px 0px 50px 50px;
-        /* background: #e1dfdf; */
-        opacity: 0.8;
+        padding-top: 50px;
         -webkit-font-smoothing: antialiased;
         /* to stop flickering of text in safari */
         transform-origin: 0% 0%;
         transform: translateX(0%);
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        display: none;
     }
 
     .menu-container input:checked ~ .menu {
-        transform: translateX(-100%);
+        animation: fadeIn 1.0s ease 0s 1 normal;
+        display: inline;
+        opacity: 0.8;
+        text-shadow:
+            1px 1px 1px #000,
+            -1px 1px 1px #000,
+            1px -1px 1px #000,
+            -1px -1px 1px #000,
+            1px 0px 1px #000,
+            0px 1px 1px #000,
+            -1px 0px 1px #000,
+            0px -1px 1px #000;
+    }
+    @keyframes fadeIn {
+        0% {opacity: 0}
+        100% {opacity: 0.8}
     }
 }
 
