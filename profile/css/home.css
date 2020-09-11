@@ -8,15 +8,16 @@
     z-index: 0;
 }
 
-.hello {
+#home .hello {
     color: #e1dfdf;
     margin: auto;
     text-align: center;
 }
 
-.title {
+#home .title {
     font-family: serif;
     font-size: 1.5em;
+    padding-bottom: 15px;
 }
 
 /* Header */

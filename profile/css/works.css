@@ -1,4 +1,36 @@
 #works {
     width: 100%;
     height: 100vh;
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    height: 100%;
+    height: -webkit-fill-available;
+    z-index: -1;
+    background: url('../img/works-background.png') no-repeat;
+    background-size: cover;
+}
+
+#works .contents {
+    background-color:rgba(0,0,0,0.5);
+    color: #e1dfdf;
+    /* margin: auto; */
+    text-align: center;
+    width: 100%;
+}
+
+#works .title {
+    font-family: serif;
+    font-size: 1.5em;
+    padding-top: 5rem;
 }
