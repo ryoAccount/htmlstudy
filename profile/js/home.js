@@ -38,9 +38,9 @@ function vantaLoadScript() {
 }
 
 function loadScript(src, callback) {
-    var done = false;
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
+    let done = false;
+    let head = document.getElementsByTagName('head')[0];
+    let script = document.createElement('script');
     script.src = src;
     head.appendChild(script);
     // Attach handlers for all browsers
