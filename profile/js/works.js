@@ -35,7 +35,8 @@ function loadMovie(src) {
 }
 
 function worksMenuLink() {
-    document.getElementById("home").style.display = "none";
+    document.getElementById("home").style.zIndex = 0;
+    document.getElementById("works").style.zIndex = 1;
     document.getElementById("works").style.display = "flex";
 
     document.getElementById("burger").checked = false;

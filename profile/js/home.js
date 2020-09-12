@@ -136,7 +136,8 @@ function vantaSubmitScript() {
 
 function homeMenuLink() {
     document.getElementById("home").style.display = "flex";
-    document.getElementById("works").style.display = "none";
+    document.getElementById("home").style.zIndex = 1;
+    document.getElementById("works").style.zIndex = 0;
 
     document.getElementById("burger").checked = false;
 }

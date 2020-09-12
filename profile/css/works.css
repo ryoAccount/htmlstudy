@@ -52,5 +52,28 @@
 #works .title {
     font-family: serif;
     font-size: 1.5em;
-    padding-top: 5rem;
+    padding-top: 3rem;
+}
+
+.gallery {
+    padding: 1em;
+    background-color: blanchedalmond;
+}
+
+.gallery-cell {
+    width: 66%;
+    height: 16em;
+    margin-right: 10px;
+    counter-increment: gallery-cell;
+    background-color: blueviolet;
+}
+
+/* cell number */
+.gallery-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(gallery-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
 }

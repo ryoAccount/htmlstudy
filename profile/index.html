@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/works.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -72,23 +73,42 @@
   </nav>
   
   <div id="home" class="home-page">
-    <div class="hello">
+    <div class="contents">
       <h1 class="title">M Y C V</h1>
       <p>created by R/M .</p>
     </div>
   </div>
+
   <div id="works" class="works-page" style="display: none;">
-    <video class="background-video" poster="img/works-background1.png" preload="auto" muted autoplay loop>
-      
-    </video>
+    <video class="background-video" poster="img/works-background1.png" preload="auto" muted autoplay loop></video>
     <div class="contents">
       <h1 class="title">W o r k s</h1>
       <p>Here is a link on the website I created. It is never a high quality item, but it gradually improves.</p>
+      <!-- <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+        <div class="gallery-cell"></div>
+        <div class="gallery-cell"></div>
+        <div class="gallery-cell"></div>
+        <div class="gallery-cell"></div>
+        <div class="gallery-cell"></div>
+      </div> -->
+      
+      <!-- <div class="works-item">
+        <a href="https://ryocv.online/mousehunter/index.html" target="_blank" rel="noopener" title="mousehunter">
+          <img src="img/work01-hover.webp" alt="mousehunter">
+        </a>
+        <div>
+          <h4>001</h4>
+          <h3>Hunter</h3>
+          <p>Terrifying hunters lurking in the dark.</p>
+          <a href="https://ryocv.online/mousehunter/index.html" target="_blank" rel="noopener" title="mousehunter">Discover</a>
+        </div>
+      </div> -->
     </div>
   </div>
 
   <script src="js/vendor/three.r119.min.js"></script>
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/home.js"></script>
   <script src="js/works.js"></script>
