@@ -113,8 +113,10 @@
     }
 
     .menu {
+        background-color: black;
         position: absolute;
         box-sizing: border-box;
+        height: 100vh;
         width: 130px;
         top: 0;
         padding-top: 50px;

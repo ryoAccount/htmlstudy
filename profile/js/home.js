@@ -135,6 +135,8 @@ function vantaSubmitScript() {
 }
 
 function homeMenuLink() {
-    document.getElementById("home").style.display ="flex";
-    document.getElementById("works").style.display ="none";
+    document.getElementById("home").style.display = "flex";
+    document.getElementById("works").style.display = "none";
+
+    document.getElementById("burger").checked = false;
 }
