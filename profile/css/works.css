@@ -59,6 +59,13 @@
     padding: 1em;
 }
 
+@media only screen and (min-width: 768px) { 
+    .gallery {
+        width: 75%;
+        display: inline-block;
+    }
+}
+
 .gallery-cell {
     width: 75%;
     height: 16em;
