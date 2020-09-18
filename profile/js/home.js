@@ -135,9 +135,11 @@ function vantaSubmitScript() {
 }
 
 function homeMenuLink() {
-    document.getElementById("home").style.display = "flex";
     document.getElementById("home").style.zIndex = 1;
+    document.getElementById("home").style.visibility = "visible";
+
     document.getElementById("works").style.zIndex = 0;
+    document.getElementById("works").style.visibility = "hidden";
 
     document.getElementById("burger").checked = false;
 }
