@@ -16,7 +16,7 @@ function worksLoadMovie() {
 }
 
 function loadMovie(src) {
-    let video = document.getElementsByTagName('video')[0];
+    const video = document.getElementsByTagName('video')[0];
     if (window.innerWidth < 768) {
         switch(WORKS_TARGET_NUMBER) {
             case 0:
@@ -29,7 +29,7 @@ function loadMovie(src) {
                 video.style.left = "-350px";
         }
     }
-    let source = document.createElement('source');
+    const source = document.createElement('source');
     source.src = src;
     video.appendChild(source);
 }
