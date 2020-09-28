@@ -26,7 +26,7 @@ function loadMovie(src) {
                 video.style.left = "-110px";
                 break;
             default:
-                video.style.left = "-200px";
+                video.style.left = "-350px";
         }
     }
     let source = document.createElement('source');
@@ -40,6 +40,12 @@ function worksMenuLink() {
 
     document.getElementById("works").style.zIndex = 1;
     document.getElementById("works").style.visibility = "visible";
+
+    document.getElementById("about").style.zIndex = 0;
+    document.getElementById("about").style.visibility = "hidden";
+
+    document.getElementById("contact").style.zIndex = 0;
+    document.getElementById("contact").style.visibility = "hidden";
 
     document.getElementById("burger").checked = false;
 }

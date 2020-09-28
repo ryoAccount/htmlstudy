@@ -29,6 +29,8 @@
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/works.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
   <meta name="theme-color" content="#fafafa">
@@ -57,12 +59,12 @@
           </a>
         </li>
         <li>
-          <a href="#about">
+          <a href="#about" onclick="aboutMenuLink()">
             About
           </a>
         </li>
         <li>
-          <a href="#contact">
+          <a href="#contact" onclick="contactMenuLink()">
             Contact
           </a>
         </li>
@@ -149,12 +151,22 @@
     </div>
   </div>
 
+  <div id="about" class="about-page" style="visibility: hidden;">
+    <p>Create now...</p>
+  </div>
+
+  <div id="contact" class="contact-page" style="visibility: hidden;">
+    <p>Create now...</p>
+  </div>
+
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/home.js"></script>
   <script src="js/works.js"></script>
+  <script src="js/about.js"></script>
+  <script src="js/contact.js"></script>
 
   <!-- Google Analytics -->
   <script>

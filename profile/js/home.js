@@ -141,5 +141,11 @@ function homeMenuLink() {
     document.getElementById("works").style.zIndex = 0;
     document.getElementById("works").style.visibility = "hidden";
 
+    document.getElementById("about").style.zIndex = 0;
+    document.getElementById("about").style.visibility = "hidden";
+
+    document.getElementById("contact").style.zIndex = 0;
+    document.getElementById("contact").style.visibility = "hidden";
+
     document.getElementById("burger").checked = false;
 }

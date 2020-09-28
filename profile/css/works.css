@@ -43,7 +43,7 @@
 }
 
 #works .contents {
-    background-color:rgba(0,0,0,0.5);
+    background-color:rgba(0,0,0,0.7);
     color: #e1dfdf;
     text-align: center;
     width: 100%;
@@ -101,4 +101,5 @@
 
 .works-text {
     text-align: center;
+    color: white;
 }
