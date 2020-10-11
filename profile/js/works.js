@@ -26,7 +26,7 @@ function loadMovie(src) {
                 video.style.left = "-110px";
                 break;
             default:
-                video.style.left = "-350px";
+                video.style.left = "-600px";
         }
     }
     const source = document.createElement('source');
