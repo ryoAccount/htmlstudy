@@ -49,7 +49,14 @@
     text-align: left;
     padding-left: 0;
     overflow: scroll;
+    -ms-overflow-style: none; /* IE, Edge */
+    scrollbar-width: none; /* Firefox */
     white-space: nowrap;
+}
+
+.profile-left ul::-webkit-scrollbar {
+    /* Chrome, Safari */
+    display:none;
 }
 
 .profile-left ul li {
