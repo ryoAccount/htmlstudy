@@ -3,6 +3,11 @@ const WORKS_TARGET_NUMBER = Math.floor(Math.random() * 10) % 3;
 window.onload = worksLoadMovie();
 
 function worksLoadMovie() {
+    if (window.innerWidth < 768) {
+        // no laod movie
+        // performance is painful
+        return;
+    }
     switch(WORKS_TARGET_NUMBER) {
         case 0:
             loadMovie("video/works-background1.mp4");
@@ -17,18 +22,6 @@ function worksLoadMovie() {
 
 function loadMovie(src) {
     const video = document.getElementsByTagName('video')[0];
-    if (window.innerWidth < 768) {
-        switch(WORKS_TARGET_NUMBER) {
-            case 0:
-                video.style.left = "-150px";
-                break;
-            case 1:
-                video.style.left = "-110px";
-                break;
-            default:
-                video.style.left = "-600px";
-        }
-    }
     const source = document.createElement('source');
     source.src = src;
     video.appendChild(source);
