@@ -1,43 +1,76 @@
 const VANTA_TARGET_NUMBER = Math.floor(Math.random() * 10);
+const WORKS_TARGET_NUMBER = Math.floor(Math.random() * 10) % 3;
 
-window.onload = vantaLoadScript();
+window.onload = onloadScript();
 
-function vantaLoadScript() {
+function clickMenuLink(menu) {
+    const menuLinks = ['home', 'works', 'about', 'contact'];
+
+    menuLinks.forEach(menuLink => {
+        if (menu === menuLink) {
+            document.getElementById(menu).style.zIndex = 1;
+            document.getElementById(menu).style.visibility = "visible";
+        } else {
+            document.getElementById(menuLink).style.zIndex = 0;
+            document.getElementById(menuLink).style.visibility = "hidden";
+        }
+    });
+
+    document.getElementById("burger").checked = false;
+}
+
+
+function onloadScript() {
     switch(VANTA_TARGET_NUMBER) {
         case 0:
         case 1:
-            loadScript("js/vanta/vanta.net.min.js", function() {
+            vantaLoadScript("js/vanta/vanta.net.min.js", function() {
                 vantaSubmitScript();
             });
             break;
         case 2:
         case 3:
-            loadScript("js/vanta/vanta.globe.min.js", function() {
+            vantaLoadScript("js/vanta/vanta.globe.min.js", function() {
                 vantaSubmitScript();
             });
             break;
         case 4:
         case 5:
-            loadScript("js/vanta/vanta.dots.min.js", function() {
+            vantaLoadScript("js/vanta/vanta.dots.min.js", function() {
                 vantaSubmitScript();
             });
             break;
         case 6:
         case 7:
-            loadScript("js/vanta/vanta.rings.min.js", function() {
+            vantaLoadScript("js/vanta/vanta.rings.min.js", function() {
                 vantaSubmitScript();
             });
             break;
         case 8:
         case 9:
         default:
-            loadScript("js/vanta/vanta.halo.min.js", function() {
+            vantaLoadScript("js/vanta/vanta.halo.min.js", function() {
                 vantaSubmitScript();
             });
     }
+
+    if (window.innerWidth >= 768) {
+        switch(WORKS_TARGET_NUMBER) {
+            case 0:
+                loadMovie("video/works-background1.mp4");
+                break;
+            case 1:
+                loadMovie("video/works-background2.mp4");
+                break;
+            default:
+                loadMovie("video/works-background3.mp4");
+        }
+        // mobile no laod movie
+        // performance is painful
+    }
 }
 
-function loadScript(src, callback) {
+function vantaLoadScript(src, callback) {
     let done = false;
     let head = document.getElementsByTagName('head')[0];
     let script = document.createElement('script');
@@ -134,18 +167,9 @@ function vantaSubmitScript() {
     }
 }
 
-function homeMenuLink() {
-    document.getElementById("home").style.zIndex = 1;
-    document.getElementById("home").style.visibility = "visible";
-
-    document.getElementById("works").style.zIndex = 0;
-    document.getElementById("works").style.visibility = "hidden";
-
-    document.getElementById("about").style.zIndex = 0;
-    document.getElementById("about").style.visibility = "hidden";
-
-    document.getElementById("contact").style.zIndex = 0;
-    document.getElementById("contact").style.visibility = "hidden";
-
-    document.getElementById("burger").checked = false;
+function loadMovie(src) {
+    const video = document.getElementsByTagName('video')[0];
+    const source = document.createElement('source');
+    source.src = src;
+    video.appendChild(source);
 }
