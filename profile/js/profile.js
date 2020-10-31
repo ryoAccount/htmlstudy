@@ -4,7 +4,7 @@ const WORKS_TARGET_NUMBER = Math.floor(Math.random() * 10) % 3;
 window.onload = onloadScript();
 
 function clickMenuLink(menu) {
-    const menuLinks = ['home', 'works', 'about', 'contact'];
+    const menuLinks = ['home', 'works', 'about', 'thanks'];
 
     menuLinks.forEach(menuLink => {
         if (menu === menuLink) {

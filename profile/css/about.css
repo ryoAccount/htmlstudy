@@ -24,8 +24,7 @@
 }
 
 .profile {
-    margin: 0 1em;
-    width: fit-content;
+    width: 100%;
 }
 
 .profile-img {
@@ -38,10 +37,26 @@
     width: 180px;
 }
 
-.profile-left {
-    display: inline-block;
-    min-width: 250px;
-    width: 30%;
+/* desktop styles */
+@media only screen and (min-width: 768px) { 
+    .profile-left {
+        display: block;
+        float: left;
+        margin: 0 5em;
+        max-width: 250px;
+        text-align: center;
+        width: 50%;
+    }
+}
+/* mobile styles */
+@media only screen and (max-width: 767px) { 
+    .profile-left {
+        display: block;
+        margin: auto;
+        min-width: 250px;
+        text-align: center;
+        width: 50%;
+    }
 }
 
 .profile-left ul {
@@ -88,7 +103,13 @@
 
 .profile-right {
     display: inline-block;
-    position: absolute;
     text-align: left;
-    width: 70%;
+    width: 50%;
+}
+
+/* TODO: mobile表示解除 */
+@media only screen and (max-width: 767px) { 
+    .profile-right {
+        display: none;
+    }
 }
