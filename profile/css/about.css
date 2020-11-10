@@ -42,7 +42,7 @@
     .profile-left {
         display: block;
         float: left;
-        margin: 0 5em;
+        margin: 0 4em 0 8em;
         max-width: 250px;
         text-align: center;
         width: 50%;
@@ -103,9 +103,15 @@
 
 .profile-right {
     display: inline-block;
+    margin-top: 1.5em;
     text-align: left;
     width: 50%;
 }
+
+.profile-right p span {
+    color: aquamarine;
+}
+
 
 /* TODO: mobile表示解除 */
 @media only screen and (max-width: 767px) { 
