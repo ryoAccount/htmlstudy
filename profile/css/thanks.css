@@ -1,0 +1,26 @@
+#thanks {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#thanks .contents {
+    background-color: rgb(48, 34, 34);
+    color: #e1dfdf;
+    text-align: center;
+    width: 100%;
+}
+
+#thanks .title {
+    font-family: serif;
+    font-size: 1.5em;
+    padding-top: 3rem;
+}
+
+#thanks .contents p {
+    margin: 40px 0px;
+}

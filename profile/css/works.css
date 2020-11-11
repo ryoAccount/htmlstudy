@@ -9,7 +9,7 @@
 }
 
 /* mobile styles */
-@media only screen and (max-width: 767px) { 
+@media only screen and (max-width: 768px) { 
     .background-video {
         position: fixed;
         min-width: 100%;
@@ -31,7 +31,7 @@
         background-size: cover;
     }
 }
-@media only screen and (max-width: 1023px) { 
+@media only screen and (max-width: 1024px) { 
     .background-video {
         height: 100%;
     }
