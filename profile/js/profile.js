@@ -1,12 +1,12 @@
 const VANTA_TARGET_NUMBER = Math.floor(Math.random() * 10);
 const WORKS_TARGET_NUMBER = Math.floor(Math.random() * 10) % 3;
+const MENU_LINKS = ['home', 'works', 'about', 'thanks'];
 
 window.onload = onloadScript();
 
 function clickMenuLink(menu) {
-    const menuLinks = ['home', 'works', 'about', 'thanks'];
 
-    menuLinks.forEach(menuLink => {
+    MENU_LINKS.forEach(menuLink => {
         if (menu === menuLink) {
             document.getElementById(menu).style.zIndex = 1;
             document.getElementById(menu).style.visibility = "visible";
