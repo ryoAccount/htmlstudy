@@ -109,12 +109,22 @@
 
 .profile-right p span {
     color: aquamarine;
+    font-weight: 600;
 }
 
-
-/* TODO: mobile表示解除 */
 @media only screen and (max-width: 767px) { 
-    .profile-right {
+    /* .profile-right {
         display: none;
+    } */
+    #about .contents {
+        overflow-y: scroll;
+    }
+
+    .profile-right {
+        display: block;
+        margin: 3.5em auto;
+        min-width: 250px;
+        text-align: left;
+        width: 50%;
     }
 }
