@@ -19,12 +19,16 @@
             width: 80px;
             text-align: center;
             vertical-align: middle;
-            font-size: 40px;
+            font-size: 30px;
             cursor: pointer;
         }
 
         #playerMsg {
             text-align: center;
+        }
+
+        #msg {
+            height: 25px;
         }
 
         #resetButtun {
@@ -60,7 +64,7 @@
         <div id="playerMsg">
             <div style="color:#f00;" v-if="playerId==1">「○ プレイヤー のターンです」</div>
             <div style="color:#00f;" v-if="playerId==2">「× プレイヤー のターンです」</div>
-            <div v-if="msg">{{msg}}</div>
+            <div id="msg">{{msg}}</div>
             <button id="resetButtun" @click="init()">リセットする</button>
         </div>
     </div>
