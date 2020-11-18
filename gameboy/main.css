@@ -133,7 +133,7 @@ input.btn-hide {
   position: absolute;
   left: 30px;
   font-size: 15px;
-  color: blue;
+  color: darkblue;
   margin-top: 10px;
   font-weight: 600;
   font-family: sans-serif;
@@ -142,101 +142,84 @@ input.btn-hide {
   position: absolute;
   left: 105px;
   font-size: 25px;
-  color: blue;
+  color: darkblue;
   font-family: sans-serif;
 }
 .gameboy .tm-3 {
   position: absolute;
   left: 235px;
   font-size: 10px;
-  color: blue;
+  color: darkblue;
   margin-top: 15px;
 }
 
-.gameboy .controls-cont {
+.gameboy .controls-area {
   display: block;
   position: relative;
   margin-top: 90px;
 }
-.gameboy .controls-cont .btn-direction {
+.gameboy .controls-area .cross-key {
   position: relative;
   margin-left: 40px;
   top: 60px;
 }
-.gameboy .controls-cont .btn-direction:before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 30px;
-  left: 30px;
-  width: 30px;
-  height: 30px;
-  background-color: #353535;
-  border-radius: 100%;
-}
-.gameboy .controls-cont .btn-direction .vertical,
-.gameboy .controls-cont .btn-direction .horizontal {
+.gameboy .controls-area .cross-key .vertical,
+.gameboy .controls-area .cross-key .side {
+  background-color: black;
+  border-radius: 5px;
   position: absolute;
   left: 30px;
   width: 30px;
   height: 90px;
-  background: #444;
-  border-radius: 5px;
 }
-.gameboy .controls-cont .btn-direction .vertical:before,
-.gameboy .controls-cont .btn-direction .horizontal:before {
-  content: "";
-  position: relative;
-  top: 99px;
-  left: 8px;
-  width: 0;
-  height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 7px solid #dedede;
-}
-.gameboy .controls-cont .btn-direction .vertical:after,
-.gameboy .controls-cont .btn-direction .horizontal:after {
-  content: "";
-  position: relative;
-  top: -27px;
-  left: -5.6px;
-  width: 0;
-  height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-bottom: 7px solid #dedede;
-}
-.gameboy .controls-cont .btn-direction .horizontal {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
+.gameboy .controls-area .cross-key .side {
   transform: rotate(90deg);
 }
-.gameboy .controls-cont .btn-AB {
+.gameboy .controls-area .btn {
   position: absolute;
-  top: 72px;
-  left: 252px;
-  width: 130px;
-  height: 60px;
-  background: #dfdfdf;
-  border-radius: 30px;
-  -webkit-transform: rotate(-25deg);
+  top: 70px;
+  right: 40px;
 }
-.gameboy .controls-cont .btn-AB:after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  right: 9px;
-  width: 44px;
-  height: 44px;
-  background: #a93671;
-  box-shadow: 68px 0 #a93671;
+.gameboy .controls-area .btn .btn-A {
+  background-color: purple;
   border-radius: 100%;
-  -webkit-transform: rotate(180deg);
+  right: 5px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
 }
-.gameboy .controls-cont .btn-start-select {
+.gameboy .controls-area .btn .btn-A::after {
+  content: "A";
+  color: darkblue;
+  font-family: cursive, sans-serif;
+  font-weight: 600;
+  display: inline-flex;
+  position: relative;
+  top: 40px;
+  right: -30px;
+  transform: rotate(-30deg);
+}
+.gameboy .controls-area .btn .btn-B {
+  background-color: purple;
+  border-radius: 100%;
+  top: 25px;
+  right: 60px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+.gameboy .controls-area .btn .btn-B::after {
+  content: "B";
+  color: darkblue;
+  font-family: cursive, sans-serif;
+  font-weight: 600;
+  display: inline-flex;
+  position: relative;
+  top: 40px;
+  right: -30px;
+  transform: rotate(-30deg);
+}
+.gameboy .controls-area .btn-start-select {
   position: absolute;
   top: 205px;
   left: 140px;
