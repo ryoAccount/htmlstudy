@@ -192,6 +192,7 @@ input.btn-hide {
   content: "A";
   color: darkblue;
   font-family: cursive, sans-serif;
+  font-size: 15px;
   font-weight: 600;
   display: inline-flex;
   position: relative;
@@ -212,6 +213,7 @@ input.btn-hide {
   content: "B";
   color: darkblue;
   font-family: cursive, sans-serif;
+  font-size: 15px;
   font-weight: 600;
   display: inline-flex;
   position: relative;
@@ -219,28 +221,113 @@ input.btn-hide {
   right: -30px;
   transform: rotate(-30deg);
 }
-.gameboy .controls-area .btn-start-select {
+.gameboy .controls-area .btn-sub {
   position: absolute;
-  top: 205px;
+  top: 200px;
   left: 140px;
-  height: 12px;
+  height: 10px;
   width: 60px;
-  background: #999;
-  border-radius: 10px;
-  -webkit-transform: rotate(-25deg);
-  box-shadow: 57px 27px #999, 0 0 0 5px #dfdfdf, 57px 27px 0 5px #dfdfdf;
 }
-.gameboy .speakers {
-  content: "";
+.gameboy .controls-area .btn-sub .btn-start {
+  background-color: grey;
+  border-radius: 30px;
+  position: absolute;
+  top: 0px;
+  left: 70px;
+  width: 60px;
+  height: 10px;
+  transform: rotate(-25deg);
+}
+.gameboy .controls-area .btn-sub .btn-start::after {
+  content: "START";
+  color: darkblue;
+  font-family: cursive, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
   position: relative;
-  height: 70px;
-  width: 8px;
-  top: 260px;
-  left: 300px;
-  background: #ddd;
-  border-radius: 4px;
-  -webkit-transform: rotate(-25deg);
-  box-shadow: 20px 0 #ddd, 40px 0 #ddd, 60px 0 #ddd, 80px 0 #ddd, 100px 0 #ddd;
+  top: 10px;
+  right: -10px;
+}
+.gameboy .controls-area .btn-sub .btn-select {
+  background-color: grey;
+  border-radius: 30px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 60px;
+  height: 10px;
+  transform: rotate(-25deg);
+}
+.gameboy .controls-area .btn-sub .btn-select::after {
+  content: "SELECT";
+  color: darkblue;
+  font-family: cursive, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  position: relative;
+  top: 10px;
+  right: -10px;
+}
+.gameboy .speaker {
+  position: absolute;
+  bottom: 10px;
+  right: 100px;
+  transform: rotate(-25deg);
+}
+.gameboy .speaker div:nth-child(1){
+  background-color: grey;
+  border-radius: 5px;
+  width: 5px;
+  height: 60px;
+  bottom: 10px;
+  right: 110px;
+}
+.gameboy .speaker div:nth-child(2){
+  position: absolute;
+  background-color: grey;
+  border-radius: 5px;
+  width: 5px;
+  height: 60px;
+  bottom: 0px;
+  right: -15px;
+}
+.gameboy .speaker div:nth-child(3){
+  position: absolute;
+  background-color: grey;
+  border-radius: 5px;
+  width: 5px;
+  height: 60px;
+  bottom: 0px;
+  right: -30px;
+}
+.gameboy .speaker div:nth-child(4){
+  position: absolute;
+  background-color: grey;
+  border-radius: 5px;
+  width: 5px;
+  height: 60px;
+  bottom: 0px;
+  right: -45px;
+}
+.gameboy .speaker div:nth-child(5){
+  position: absolute;
+  background-color: grey;
+  border-radius: 5px;
+  width: 5px;
+  height: 60px;
+  bottom: 0px;
+  right: -60px;
+}
+.gameboy .speaker div:nth-child(6){
+  position: absolute;
+  background-color: grey;
+  border-radius: 5px;
+  width: 5px;
+  height: 60px;
+  bottom: 0px;
+  right: -75px;
 }
 .phones {
   position: absolute;
