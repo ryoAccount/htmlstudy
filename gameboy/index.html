@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>GAME BOY</title>
     <meta charset="utf-8"/>
     <meta name="description" content="GAME BOY"/>
+    <title>GAME BOY</title>
     <link rel="stylesheet" href="main.css"/>
 </head>
 <body>
@@ -11,7 +11,6 @@
     <!-- https://github.com/baumannzone/gameboy-css -->
     <input class="btn-on" type="button" value="Encender"/>
     <input class="btn-off btn-hide" type="button" value="Apagar"/>
-    <audio src="sound.mp3"></audio>
     <div class="gameboy">
         <div class="line-1"></div>
         <div class="line-2"></div>
@@ -24,18 +23,20 @@
             <span>▲</span>
         </div>
         <div class="screen-area">
-            <div class="power"></div>
+            <div class="lamp"></div>
+            <div class="battery">BATTERY</div>
             <div class="screen">
                 <div class="header">DOT MATRIX WITH STEREO SOUND</div>
-                <div class="logo">Nintendo
-                    <div class="copy">®</div>
+                <div class="logo">
+                    Nintendo
+                    <span class="copyright">®</span>
                 </div>
             </div>
         </div>
         <div class="tm-1">Nintendo</div>
         <div class="tm-2">GAME BOY</div>
         <div class="tm-3">TM</div>
-        <div class="controls-area">
+        <div class="control-area">
             <div class="cross-key">
                 <div class="vertical"></div>
                 <div class="side"></div>
@@ -64,6 +65,7 @@
         <div class="line-6"></div>
         <div class="line-7"></div>
     </div>
+    <audio src="sound.mp3"></audio>
     <script src="main.js"></script>
 </body>
 </html>

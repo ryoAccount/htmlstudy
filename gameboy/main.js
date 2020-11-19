@@ -33,7 +33,7 @@ const App = {
     const audio = document.querySelector( `audio` );
     const btnON = document.querySelector( `.btn-on` );
     const btnOFF = document.querySelector( `.btn-off` );
-    const power = document.querySelector( `.power` );
+    const lamp = document.querySelector( `.lamp` );
     const logo = document.querySelector( `.logo` );
 
     // Turn ON
@@ -43,8 +43,8 @@ const App = {
       btnON.classList.add( 'btn-hide' );
       btnOFF.classList.remove( 'btn-hide' );
 
-      // Power Led
-      power.classList.add( 'power-on' );
+      // lamp Led
+      lamp.classList.add( 'lamp-on' );
 
       // Animate text & play sound
       const transitionEvent = whichTransitionEvent();
@@ -59,8 +59,8 @@ const App = {
       btnON.classList.remove( 'btn-hide' );
       btnOFF.classList.add( 'btn-hide' );
 
-      // Power Led
-      power.classList.remove( 'power-on' );
+      // lamp Led
+      lamp.classList.remove( 'lamp-on' );
 
       // Text
       logo.classList.remove( 'end' );
