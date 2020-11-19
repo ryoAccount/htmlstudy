@@ -13,27 +13,68 @@ input.btn-hide {
   border-radius: 10px 10px 60px 10px;
   display: block;
   position: relative;
-  margin: 20px auto;
+  margin: 10px;
   width: 420px;
   height: 700px;
 }
-.gameboy:before {
-  content: "";
-  border-bottom: 4px solid ivory;
+.gameboy .line-1 {
+  background-color: ivory;
+  position: absolute;
+  width: 5px;
+  height: 30px;
+  top: 0;
+  left: 40px;
+}
+.gameboy .line-2 {
+  background-color: ivory;
+  position: absolute;
+  width: 5px;
+  height: 30px;
+  top: 0;
+  right: 40px;
+}
+.gameboy .line-3 {
+  background-color: ivory;
   position: absolute;
   width: 100%;
-  height: 30px;
+  height: 5px;
+  top: 30px;
 }
-.gameboy:after {
-  content: "";
-  border-left: 4px solid ivory;
-  border-right: 4px solid ivory;
-  margin-left: 40px;
-  margin-right: 40px;
+.gameboy .line-4 {
+  background-color: ivory;
   position: absolute;
+  width: 5px;
+  height: 5px;
   top: 0;
-  width: 330px;
-  height: 30px;
+  left: 70px;
+}
+.gameboy .line-5 {
+  background-color: ivory;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 0;
+  left: 80px;
+}
+.off-on {
+  background-color: ivory;
+  border-radius: 30px;
+  border: 1px solid ivory;
+  color: grey;
+  font-size: 8px;
+  font-family: sans-serif;
+  padding: 2px 5px;
+  position: absolute;
+  top: 5px;
+  left: 60px;
+}
+.off-on span:nth-child(1){
+  display: inline-block;
+  transform: rotate(-90deg);
+}
+.off-on span:nth-child(2){
+  display: inline-block;
+  transform: rotate(90deg);
 }
 .gameboy .screen-area {
   background-color: grey;
@@ -330,74 +371,31 @@ input.btn-hide {
   right: -75px;
 }
 .phones {
-  position: absolute;
-  bottom: 4px;
-  left: 50%;
-  padding: 3px 5px;
-  transform: translateX(-50%);
-  color: #dadada;
-  background-color: #e8e8e8;
+  background-color: ivory;
+  border-radius: 30px;
+  border: 1px solid ivory;
+  color: grey;
   font-size: 8px;
   font-family: sans-serif;
-  text-transform: uppercase;
-  border-radius: 30px;
-}
-.phones:before {
-  content: "";
+  height: 15px;
+  padding: 2px 5px;
   position: absolute;
-  width: 15px;
+  bottom: 5px;
+  left: 175px;
+}
+.gameboy .line-6 {
+  background-color: ivory;
+  position: absolute;
+  width: 5px;
   height: 5px;
-  bottom: -4px;
-  background-color: #e8e8e8;
-  left: 9px;
+  bottom: 0;
+  left: 220px;
 }
-.phones:after {
-  content: "";
+.gameboy .line-7 {
+  background-color: ivory;
   position: absolute;
-  width: 3px;
+  width: 5px;
   height: 5px;
-  bottom: -4px;
-  left: 12px;
-  background-color: #ddd;
-  box-shadow: 5px 0 #ddd;
-  border-radius: 4px 4px 0 0;
-}
-.on-off {
-  position: absolute;
-  top: 2px;
-  left: 20%;
-  padding: 3px 5px;
-  transform: translateX(-50%);
-  color: #dadada;
-  background-color: #e8e8e8;
-  font-size: 8px;
-  font-family: sans-serif;
-  text-transform: uppercase;
-  border-radius: 30px;
-}
-.on-off:before {
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 5px;
-  top: -2px;
-  background-color: #e8e8e8;
-  left: 6px;
-}
-.on-off:after {
-  content: "";
-  position: absolute;
-  width: 3px;
-  height: 5px;
-  top: -2px;
-  left: 9px;
-  background-color: #ddd;
-  box-shadow: 5px 0 #ddd;
-  border-radius: 0 0 3px 3px;
-}
-.gh-img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: 0;
+  bottom: 0;
+  left: 230px;
 }
