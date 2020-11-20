@@ -31,17 +31,17 @@ const App = {
     }
 
     const audio = document.querySelector( `audio` );
-    const btnON = document.querySelector( `.btn-on` );
-    const btnOFF = document.querySelector( `.btn-off` );
+    const buttonON = document.querySelector( `.button-on` );
+    const buttonOFF = document.querySelector( `.button-off` );
     const lamp = document.querySelector( `.lamp` );
     const logo = document.querySelector( `.logo` );
 
     // Turn ON
-    btnON.onclick = function () {
+    buttonON.onclick = function () {
 
       // Button
-      btnON.classList.add( 'btn-hide' );
-      btnOFF.classList.remove( 'btn-hide' );
+      buttonON.classList.add( 'button-hide' );
+      buttonOFF.classList.remove( 'button-hide' );
 
       // lamp Led
       lamp.classList.add( 'lamp-on' );
@@ -53,11 +53,11 @@ const App = {
     };
 
 
-    btnOFF.onclick = function () {
+    buttonOFF.onclick = function () {
 
       // Button
-      btnON.classList.remove( 'btn-hide' );
-      btnOFF.classList.add( 'btn-hide' );
+      buttonON.classList.remove( 'button-hide' );
+      buttonOFF.classList.add( 'button-hide' );
 
       // lamp Led
       lamp.classList.remove( 'lamp-on' );
