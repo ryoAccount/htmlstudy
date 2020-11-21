@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="main.css"/>
 </head>
 <body>
-    <!-- https://ja.wikipedia.org/wiki/%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%9C%E3%83%BC%E3%82%A4#/media/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Game-Boy-FL.png -->
-    <!-- https://github.com/baumannzone/gameboy-css -->
     <input class="button-on" type="button" value="Encender"/>
     <input class="button-off button-hide" type="button" value="Apagar"/>
     <div class="gameboy">
@@ -18,7 +16,7 @@
         <div class="line-4"></div>
         <div class="line-5"></div>
         <div class="switch"></div>
-        <div class="off-on">
+        <div class="offon">
             <span>▲</span>
             OFF・ON
             <span>▲</span>
@@ -38,21 +36,23 @@
                 </div>
             </div>
         </div>
-        <div class="tm-1">Nintendo</div>
-        <div class="tm-2">GAME BOY</div>
-        <div class="tm-3">TM</div>
+        <div class="tm-area">
+            <span>Nintendo</span>
+            <span>GAME BOY</span>
+            <span>TM</span>
+        </div>
         <div class="control-area">
             <div class="cross-key">
                 <div class="vertical"></div>
                 <div class="side"></div>
             </div>
             <div class="button">
-                <div class="button-A"></div>
-                <div class="button-B"></div>
+                <div class="A"></div>
+                <div class="B"></div>
             </div>
             <div class="button-sub">
-                <div class="button-start"></div>
-                <div class="button-select"></div>
+                <div class="start"></div>
+                <div class="select"></div>
             </div>
         </div>
         <div class="speaker">
@@ -70,7 +70,7 @@
         <div class="line-6"></div>
         <div class="line-7"></div>
     </div>
-    <audio src="sound.mp3"></audio>
+    <audio class="se" src="sound.mp3"></audio>
     <script src="main.js"></script>
 </body>
 </html>
