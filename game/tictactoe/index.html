@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic-Tac-Toe</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            /* background-color: rgba(0, 0, 0, 0.7); */
+            /* background-image: url(./tictactoe.png); */
+            /* background-size: cover; */
+            margin: 20px auto;
+            width: 100%;
+            height: 100vh;
+        }
+
+        #table {
+            margin:0 auto;
+            border-collapse: collapse;
+            /* border: 3px solid #ccc; */
+        }
+
+        #table td {
+            /* border:2px solid green; */
+            height: 80px;
+            width: 80px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        #table td div{
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        #playerMsg {
+            text-align: center;
+        }
+
+        #resetButtun {
+            position: relative;
+            display: inline-block;
+            padding: 0.25em 0.5em;
+            text-decoration: none;
+            color: #FFF;
+            background-color: #fd9535;
+            border-bottom: solid 2px #d27d00;
+            border-radius: 4px;
+            box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+            font-weight: bold;
+        }
+
+        #resetButtun:active {
+            border-bottom: solid 2px #fd9535;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <table id="table">
+            <tr v-for="(row,rowsIndex) in states">
+                <td v-for="(state,colsIndex) in row" @click="onSelect(rowsIndex, colsIndex)" :style="setStyle(rowsIndex, colsIndex)">
+                    <div style="color:#f00;" v-if="state==1">○</div>
+                    <div style="color:#00f;" v-if="state==2">×</div>
+                </td>
+            </tr>
+        </table>
+
+        <div id="playerMsg">
+            <div style="color:#f00;" v-if="playerId==1">○ Player turn.</div>
+            <div style="color:#00f;" v-if="playerId==2">× Player turn.</div>
+            <div id="msg">{{msg}}</div>
+            <button v-if="isStart" id="resetButtun" @click="init()">Reset</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                states: [],
+                msg: '',
+                endFlg: false,
+                isStart: false,
+                playerId: 1 // 1:○ 2:×
+            },
+            mounted: function() {
+                this.init();
+            },
+            methods: {
+                init: function() {
+                    this.states = [
+                        [-1,-1,-1,-1,-1,-1],
+                        [-1,-1,-1,-1,-1,-1],
+                        [-1,-1,-1,-1,-1,-1],
+                        [-1,-1,-1,-1,-1,-1],
+                        [-1,-1,-1,-1,-1,-1],
+                        [-1,-1,-1,-1,-1,-1]
+                    ];
+                    this.msg = 'If you line up four ○ / × in any of the vertical, horizontal, and diagonal directions, you win!';
+                    this.endFlg = false;
+                    this.isStart = false;
+                    this.playerId = 1;
+                },
+
+                onSelect: function(rowsIndex, colsIndex) {
+                    if(this.endFlg) {
+                        // nothing
+                    } else if(this.states[rowsIndex][colsIndex] != -1) {
+                        this.msg = 'Already selected!';
+                    } else {
+                        this.isStart = true;
+                        this.msg = '';
+                        var states = JSON.parse(JSON.stringify(this.states))
+                        states[rowsIndex][colsIndex] = this.playerId;
+                        this.states = states;
+                        this.playerId = (this.playerId == 1) ? 2 : 1;
+
+                        var winnerId = this.getWinnerId();
+
+                        if(winnerId != -1) {
+
+                            playerIds = {
+                                1: '○',
+                                2: '×'
+                            };
+                            this.msg = playerIds[winnerId] +' winner！';
+                            this.endFlg = true;
+                        
+                        } else if(this.isDraw()) {
+                            this.msg = 'draw!';
+                            this.endFlg = true;
+                        }
+                    }
+                },
+                getWinnerId: function() {
+                    for(var i = 0; i < 6 ; i++){
+                        // side
+                        var row = this.states[i];
+                        var rowResult = this.isStatesFilled(row);
+                        if(rowResult != -1) {
+                            return rowResult;
+                        }
+                        // vertical
+                        var col = [
+                            this.states[0][i],
+                            this.states[1][i],
+                            this.states[2][i],
+                            this.states[3][i],
+                            this.states[4][i],
+                            this.states[5][i]
+                        ];
+                        var colResult = this.isStatesFilled(col);
+                        if(colResult != -1) {
+                            return colResult;
+                        }
+                    }
+
+                    for(var i = 0; i < 3 ; i++) {
+                        for(var j = 0; j < 3 ; j++) {
+                            // Licking
+                            var skew1 = [
+                                this.states[i][j],
+                                this.states[i+1][j+1],
+                                this.states[i+2][j+2],
+                                this.states[i+3][j+3],
+                                -1, // dummy
+                                -1  // dummy
+                            ];
+                            var slew1Result = this.isStatesFilled(skew1);
+                            if(slew1Result != -1) {
+                                return slew1Result;
+                            }
+
+                            var skew2 = [
+                                this.states[i][5-j],
+                                this.states[i+1][4-j],
+                                this.states[i+2][3-j],
+                                this.states[i+3][2-j],
+                                -1, // dummy
+                                -1  // dummy
+                            ];
+                            var slew2Result = this.isStatesFilled(skew2);
+                            if(slew2Result != -1) {
+                                return slew2Result;
+                            }
+                        }
+                    }
+                    // the winner has not been decided
+                    return -1;
+                },
+
+                // winners will be determined if the same value is lined up four times in a row
+                isStatesFilled: function(states) {
+                    for(var i = 0; i < 3 ; i++) {
+                        if( states[i] != -1 &&
+                            states[i] == states[i+1] &&
+                            states[i+1] == states[i+2] &&
+                            states[i+2] == states[i+3] ) {
+                            return states[i];
+                        }
+                    }
+                    return -1;
+                },
+
+                // draw if all selected
+                isDraw: function() {
+                    for(var i in this.states) {
+                        var row = this.states[i];
+                        for(var j in row) {
+                            var state = row[j];
+                            if(state == -1) {
+                                return false;
+                            }
+                        }
+                    }
+                    return true;
+                },
+
+                setStyle: function(rowsIndex, colsIndex) {
+                    let borderStyle = [];
+                    
+                    if (rowsIndex !== 0 && rowsIndex !== this.states.length - 1) {
+                        borderStyle.push("border-top:2px solid green;border-bottom:2px solid green;");
+                    }
+                    if (colsIndex !== 0 && colsIndex !== this.states.length - 1) {
+                        borderStyle.push("border-left:2px solid green;border-right:2px solid green;");
+                    }
+
+                    return borderStyle.length === 0 ? "" : "{" + borderStyle.join("") + "}";
+                }
+            }
+        })
+    </script>
+</body>
+</html>
