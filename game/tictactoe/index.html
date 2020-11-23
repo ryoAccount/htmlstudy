@@ -8,36 +8,46 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
-            /* background-color: rgba(0, 0, 0, 0.7); */
-            /* background-image: url(./tictactoe.png); */
-            /* background-size: cover; */
-            margin: 20px auto;
+            margin: 0 auto;
+            padding-top: 20px;
             width: 100%;
             height: 100vh;
+            background: linear-gradient(0.25turn, #7dc8e7, #ebf8e1, #ecb57b);
         }
 
         #table {
             margin:0 auto;
             border-collapse: collapse;
-            /* border: 3px solid #ccc; */
         }
 
         #table td {
-            /* border:2px solid green; */
             height: 80px;
             width: 80px;
+            border-radius: 100%;
             text-align: center;
             vertical-align: middle;
             font-size: 30px;
             cursor: pointer;
         }
 
+        @media only screen and (max-width: 767px) {
+            #table {
+                margin:50px auto;
+            }
+            #table td {
+                height: 50px;
+                width: 50px;
+            }
+        }
+
         #table td div{
-            font-size: 25px;
+            font-family: monospace, sans-serif;
+            font-size: 20px;
             font-weight: 600;
         }
 
         #playerMsg {
+            margin-top: 15px;
             text-align: center;
         }
 
@@ -222,17 +232,20 @@
                     return true;
                 },
 
+                // set table layout
                 setStyle: function(rowsIndex, colsIndex) {
                     let borderStyle = [];
                     
                     if (rowsIndex !== 0 && rowsIndex !== this.states.length - 1) {
-                        borderStyle.push("border-top:2px solid green;border-bottom:2px solid green;");
+                        borderStyle.push("border-top:3px solid green;border-bottom:3px solid green;");
+                        borderStyle.push("border-top:3px solid green;border-bottom:3px solid green;");
                     }
                     if (colsIndex !== 0 && colsIndex !== this.states.length - 1) {
-                        borderStyle.push("border-left:2px solid green;border-right:2px solid green;");
+                        borderStyle.push("border-left:3px solid green;border-right:3px solid green;");
+                        borderStyle.push("border-left:3px solid green;border-right:3px solid green;");
                     }
 
-                    return borderStyle.length === 0 ? "" : "{" + borderStyle.join("") + "}";
+                    return "{" + borderStyle.join("") + "}";
                 }
             }
         })
