@@ -246,8 +246,7 @@ body {
   width: 40px;
   height: 40px;
 }
-.A::after {
-  content: "A";
+.A span {
   color: darkblue;
   font-family: cursive, sans-serif;
   font-size: 15px;
@@ -267,8 +266,7 @@ body {
   width: 40px;
   height: 40px;
 }
-.B::after {
-  content: "B";
+.B span {
   color: darkblue;
   font-family: cursive, sans-serif;
   font-size: 15px;
