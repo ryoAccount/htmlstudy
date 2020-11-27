@@ -72,6 +72,7 @@
 
 .works-image {
     width: 100%;
+    min-height: 190px;
     max-height: 256px;
 }
 
