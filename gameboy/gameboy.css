@@ -294,8 +294,7 @@ body {
   height: 10px;
   transform: rotate(-25deg);
 }
-.start::after {
-  content: "START";
+.start span {
   color: darkblue;
   font-family: cursive, sans-serif;
   font-size: 12px;
@@ -315,8 +314,7 @@ body {
   height: 10px;
   transform: rotate(-25deg);
 }
-.select::after {
-  content: "SELECT";
+.select span {
   color: darkblue;
   font-family: cursive, sans-serif;
   font-size: 12px;
