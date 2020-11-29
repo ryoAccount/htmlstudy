@@ -6,7 +6,7 @@ body {
 }
 .gameboy {
   background-color: lightgrey;
-  border-radius: 10px 10px 60px 10px;
+  border-radius: 10px 10px 50px 10px;
   display: block;
   position: relative;
   margin: 0 auto;
@@ -173,7 +173,7 @@ body {
   top: -55px;
   left: 30%;
 }
-.logo.on {
+.logo.disp {
   opacity: 1;
   top: 50px;
   transition: top 3s linear;
