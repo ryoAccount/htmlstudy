@@ -44,14 +44,12 @@
     position: absolute;
     counter-increment: gallery-cell;
     margin: 0 1em;
-    /* background-color: blueviolet; */
 }
 
 /* cell number */
 .gallery-cell:before {
     display: block;
     text-align: center;
-    /* content: counter(gallery-cell); */
     line-height: 200px;
     font-size: 80px;
     color: white;
@@ -71,9 +69,17 @@
 }
 
 .works-image {
+    border-radius: 15px;
     width: 100%;
     min-height: 190px;
     max-height: 256px;
+}
+
+/* mobile styles */
+@media only screen and (max-width: 767px) { 
+    .works-image {
+        height: 200px;
+    }
 }
 
 .works-text {
