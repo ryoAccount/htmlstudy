@@ -1,29 +1,29 @@
 window.onload = () => {
-    const SWITCH = document.querySelector('.switch');
-    const SE = document.querySelector('.se');
-    const LAMP = document.querySelector('.lamp');
-    const LOGO = document.querySelector('.logo');
+    const lamp = document.querySelector('.lamp');
+    const logo = document.querySelector('.logo');
+    const se = document.querySelector('.se');
+    const onoff = document.querySelector('.switch');
 
     let isStart = false;
     let timer = 0;
 
-    SWITCH.addEventListener('click', function() {
+    onoff.addEventListener('click', () => {
         if(isStart) {
             // ON -> OFF
-            SWITCH.classList.remove('on');
-            LOGO.classList.remove('disp');
-            LAMP.classList.remove('lamp-on');
+            lamp.classList.remove('lamp-on');
+            logo.classList.remove('disp');
+            onoff.classList.remove('on');
 
             window.clearTimeout(timer);
         } else {
             // OFF -> ON
-            SWITCH.classList.add('on');
-            LOGO.classList.add('disp');
-            LAMP.classList.add('lamp-on');
+            lamp.classList.add('lamp-on');
+            logo.classList.add('disp');
+            onoff.classList.add('on');
 
             timer = window.setTimeout(() => {
-                SE.currentTime = 0;
-                SE.play();
+                se.currentTime = 0;
+                se.play();
             }, 3000);
         }
         isStart = !isStart;
