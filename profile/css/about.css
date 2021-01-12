@@ -107,9 +107,18 @@
     width: 50%;
 }
 
-.profile-right p span {
-    color: aquamarine;
-    font-weight: 600;
+/* desktop styles */
+@media only screen and (min-width: 768px) { 
+    .profile-right {
+        height: 450px;
+        overflow-y: scroll;
+        -ms-overflow-style: none; /* IE, Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    .profile-right::-webkit-scrollbar {
+        /* Chrome, Safari */
+        display:none;
+    }
 }
 
 @media only screen and (max-width: 767px) { 
@@ -127,4 +136,9 @@
         text-align: left;
         width: 50%;
     }
+}
+
+.profile-right p span {
+    color: aquamarine;
+    font-weight: 600;
 }
