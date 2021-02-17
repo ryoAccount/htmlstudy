@@ -144,10 +144,6 @@
         width: 100%;
     }
 
-    .menu-container a {
-        color: #e1dfdf;
-    }
-
     .menu-container input {
         display: none;
     }

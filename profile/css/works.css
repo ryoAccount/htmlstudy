@@ -43,7 +43,7 @@
     color: white;
 }
 .gallery-cell p{
-    color: white;
+    font-weight: 600;
 }
 .works-link {
     width: 100%;
@@ -73,5 +73,4 @@
 .works-text {
     color: white;
     text-align: center;
-    text-shadow: 0.1px 0.1px white;
 }

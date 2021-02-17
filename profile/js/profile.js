@@ -17,5 +17,79 @@ function clickMenuLink(menu) {
 let darkModeFlg = true;
 function darkModeShift() {
     darkModeFlg = !darkModeFlg;
-    console.log(darkModeFlg);
+    if (!darkModeFlg) {
+        MENU_LINKS.forEach(contents => {
+            document.getElementById(contents).style.backgroundColor = "rgb(200, 200, 200)";
+            document.getElementById(contents).getElementsByClassName("contents")[0].style.color = "#222";
+        });
+        let menuCount = 0;
+        while (menuCount < document.getElementsByClassName("menu-container")[0].getElementsByTagName("a").length) {
+            document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].style.color = "#222";
+            document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].addEventListener('mouseover', function() {
+                this.style.color = "#00C6A7";
+            })
+            document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].addEventListener('mouseout', function() {
+                this.style.color = "#222";
+            })
+            menuCount++;
+        }
+        let worksCount = 0;
+        while (worksCount < document.getElementsByClassName("works-text").length) {
+            document.getElementsByClassName("works-text")[worksCount].style.color = "black";
+            worksCount++;
+        }
+        let aboutCount = 0;
+        while (aboutCount < document.getElementsByClassName("link-text").length) {
+            document.getElementsByClassName("link-text")[aboutCount].style.color = "black";
+            document.getElementsByClassName("link-text")[aboutCount].addEventListener('mouseover', function() {
+                this.style.color = "#00C6A7";
+            })
+            document.getElementsByClassName("link-text")[aboutCount].addEventListener('mouseout', function() {
+                this.style.color = "#222";
+            })
+            aboutCount++;
+        }
+        let thanksCount = 0;
+        while (thanksCount < document.getElementsByClassName("thanks-link").length) {
+            document.getElementsByClassName("thanks-link")[thanksCount].style.color = "#222";
+            thanksCount++;
+        }
+    } else {
+        MENU_LINKS.forEach(contents => {
+            document.getElementById(contents).style.backgroundColor = "black";
+            document.getElementById(contents).getElementsByClassName("contents")[0].style.color = "#e1dfdf";
+        });
+        let menuCount = 0;
+        while (menuCount < document.getElementsByClassName("menu-container")[0].getElementsByTagName("a").length) {
+            document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].style.color = "";
+            document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].addEventListener('mouseover', function() {
+                this.style.color = "#00C6A7";
+            })
+            document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].addEventListener('mouseout', function() {
+                this.style.color = "#e1dfdf";
+            })
+            menuCount++;
+        }
+        let worksCount = 0;
+        while (worksCount < document.getElementsByClassName("works-text").length) {
+            document.getElementsByClassName("works-text")[worksCount].style.color = "white";
+            worksCount++;
+        }
+        let aboutCount = 0;
+        while (aboutCount < document.getElementsByClassName("link-text").length) {
+            document.getElementsByClassName("link-text")[aboutCount].style.color = "";
+            document.getElementsByClassName("link-text")[aboutCount].addEventListener('mouseover', function() {
+                this.style.color = "#00C6A7";
+            })
+            document.getElementsByClassName("link-text")[aboutCount].addEventListener('mouseout', function() {
+                this.style.color = "";
+            })
+            aboutCount++;
+        }
+        let thanksCount = 0;
+        while (thanksCount < document.getElementsByClassName("thanks-link").length) {
+            document.getElementsByClassName("thanks-link")[thanksCount].style.color = "";
+            thanksCount++;
+        }
+    }
 }

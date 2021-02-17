@@ -18,8 +18,8 @@
     margin: 80px 0 0 0;
 }
 
-#thanks .contents a {
-    color: whitesmoke;
+.thanks-link {
+    color: #e1dfdf;
     display: inline-block;
     margin-top: 2em;
     position: relative;
