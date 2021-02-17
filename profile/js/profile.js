@@ -13,3 +13,9 @@ function clickMenuLink(menu) {
 
     document.getElementById("burger").checked = false;
 }
+
+let darkModeFlg = true;
+function darkModeShift() {
+    darkModeFlg = !darkModeFlg;
+    console.log(darkModeFlg);
+}
