@@ -22,16 +22,18 @@ function darkModeShift() {
             document.getElementById(contents).style.backgroundColor = "rgb(200, 200, 200)";
             document.getElementById(contents).getElementsByClassName("contents")[0].style.color = "#222";
         });
-        let menuCount = 0;
-        while (menuCount < document.getElementsByClassName("menu-container")[0].getElementsByTagName("a").length) {
-            document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].style.color = "#222";
-            document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].addEventListener('mouseover', function() {
-                this.style.color = "#00C6A7";
-            })
-            document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].addEventListener('mouseout', function() {
-                this.style.color = "#222";
-            })
-            menuCount++;
+        if (window.innerWidth > 768) {
+            let menuCount = 0;
+            while (menuCount < document.getElementsByClassName("menu-container")[0].getElementsByTagName("a").length) {
+                document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].style.color = "#222";
+                document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].addEventListener('mouseover', function() {
+                    this.style.color = "#00C6A7";
+                })
+                document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].addEventListener('mouseout', function() {
+                    this.style.color = "#222";
+                })
+                menuCount++;
+            }
         }
         let worksCount = 0;
         while (worksCount < document.getElementsByClassName("works-text").length) {
