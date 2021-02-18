@@ -1,15 +1,3 @@
-#thanks {
-    background-color: darkcyan;
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    display: flex;
-    top: 0;
-    left: 0;
-    opacity: 0.85;
-    z-index: 0;
-}
-
 #thanks .contents {
     color: #e1dfdf;
     text-align: center;
@@ -30,8 +18,8 @@
     margin: 80px 0 0 0;
 }
 
-#thanks .contents a {
-    color: whitesmoke;
+.thanks-link {
+    color: #e1dfdf;
     display: inline-block;
     margin-top: 2em;
     position: relative;
