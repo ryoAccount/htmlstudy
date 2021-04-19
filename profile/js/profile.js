@@ -20,17 +20,17 @@ function darkModeShift() {
     if (!darkModeFlg) {
         MENU_LINKS.forEach(contents => {
             document.getElementById(contents).style.backgroundColor = "rgb(200, 200, 200)";
-            document.getElementById(contents).getElementsByClassName("contents")[0].style.color = "#222";
+            document.getElementById(contents).getElementsByClassName("contents")[0].style.color = "#111";
         });
         if (window.innerWidth > 768) {
             let menuCount = 0;
             while (menuCount < document.getElementsByClassName("menu-container")[0].getElementsByTagName("a").length) {
-                document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].style.color = "#222";
+                document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].style.color = "#111";
                 document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].addEventListener('mouseover', function() {
                     this.style.color = "#00C6A7";
                 })
                 document.getElementsByClassName("menu-container")[0].getElementsByTagName("a")[menuCount].addEventListener('mouseout', function() {
-                    this.style.color = "#222";
+                    this.style.color = "#111";
                 })
                 menuCount++;
             }
@@ -47,13 +47,13 @@ function darkModeShift() {
                 this.style.color = "#00C6A7";
             })
             document.getElementsByClassName("link-text")[aboutCount].addEventListener('mouseout', function() {
-                this.style.color = "#222";
+                this.style.color = "#111";
             })
             aboutCount++;
         }
         let thanksCount = 0;
         while (thanksCount < document.getElementsByClassName("thanks-link").length) {
-            document.getElementsByClassName("thanks-link")[thanksCount].style.color = "#222";
+            document.getElementsByClassName("thanks-link")[thanksCount].style.color = "#111";
             thanksCount++;
         }
     } else {

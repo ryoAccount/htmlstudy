@@ -74,4 +74,5 @@
 .works-text {
     color: white;
     text-align: center;
+    text-shadow: 0.25px 0.25px black;
 }
