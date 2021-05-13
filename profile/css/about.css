@@ -80,7 +80,6 @@
 .link-icon {
     background-color:rgba(0,0,0,0.7);
     border-radius: 18px;
-    width: 30px;
     margin: 0 5px;
     transition: all 0.6s ease 0s;
 }
