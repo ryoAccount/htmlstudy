@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+
+.container {
+    padding: 1rem;
+    margin: 2rem;
+    transition: all 1s ease-out;
+}
+
+.effect_area {
+    border-radius: 12px;
+    box-shadow: 2px 2px 12px 2px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+}
+
+.talk_man {
+    text-align: center;
+    z-index: 3;
+}
+
+.talk_man img {
+    transition: all 1s ease-out;
+}
+
+.message {
+    font-family: 'KoHo', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.message h2 {
+    transition: all 1s ease-out;
+}
+
+.message h3 {
+    transition: all 1s ease-out;
+}
+
+.parameter {
+    margin-top: 2rem;
+}
+
+label {
+    font-family: 'KoHo', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+label::after {
+    padding-right: 4px;
+}
+
+input {
+    margin-right: 4px;
+    width: 100px;
+    border-radius: 4px;
+}
