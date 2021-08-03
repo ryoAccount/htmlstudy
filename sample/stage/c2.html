@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href='https://css.gg/search.css' rel='stylesheet'>
+    <link rel="preconnect" href='https://css.gg/add-r.css' rel='stylesheet'>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- <link id="style" rel="stylesheet" href="./style.css"> -->
+    <!-- <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrapper {
+            height: 48px;
+            border-bottom: rgb(128, 128, 128, .1) solid 2px;
+            box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, .2);
+        }
+        .menu {
+            font-weight: 600;
+            text-align: center;
+            display: block;
+            font-family: 'Kanit', sans-serif;
+            white-space: pre-wrap;
+            color: rgb(55, 55, 55);
+            padding-top: 14px;
+        }
+        .search {
+            position: absolute;
+            right: 100px;
+            top: 18px;
+        }
+        .head {
+            font-family: 'Kanit', sans-serif;
+            margin: 15px 0;
+            padding-left: 100px;
+        }
+        #article {
+            margin: 0 10px;
+        }
+        #image {
+            text-align: center;
+        }
+        #image img {
+            margin: 15px;
+            max-width: 100%;
+            height: auto;
+        }
+        .lorem {
+            font-family: 'Nunito', sans-serif;
+            margin: 10px 105px;
+        }
+        .lorem p {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <img style="visibility: hidden;" height="140px" src="https://github-readme-stats.vercel.app/api?username=ryoAccount&theme=react&include_all_commits=true&count_private=true&show_icons=true"/>
+    <img style="visibility: hidden;" height="140px" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=ryoAccount&layout=compact&theme=react"/>
+    <div id="wrapper">
+        <span class="menu">HOME     WORK     ABOUT     BLOG     CONTACT</span>
+        <!-- <div class="search">
+            <i class="gg-search"></i>
+        </div> -->
+    </div>
+    <div id="article">
+        <h1 class="head">Images without dimensions</h1>
+        <div id="image">
+            <img id="img1" src="./iclelandfall2540.jpg" width="396" height="223" alt="">
+            <img id="img2" src="./porto.jpg" width="396" height="223" alt="">
+        </div>
+        <article class="lorem">
+            <p>Always include width and height size attributes on your images and video elements. Alternatively, reserve the required space with CSS aspect ratio boxes. This approach ensures that the browser can allocate the correct amount of space in the document while the image is loading.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </article>
+        <br>
+        <h2 class="head">Ads, embeds and iframes without dimensions</h2>
+        <article class="lorem">
+            <p>Ads are one of the largest contributors to layout shifts on the web. Ad networks and publishers often support dynamic ad sizes. Ad sizes increase performance/revenue due to higher click rates and more ads competing in the auction. Unfortunately, this can lead to a suboptimal user experience due to ads pushing visible content you're viewing down the page.</p>
+        </article>
+    </div>
+    <script>
+        // window.onload = () => {
+        //     setTimeout(() => {
+        //         document.getElementById("style").href = "./style.css";
+        //     },1000);
+        // }
+    </script>
+</body>
+</html>
