@@ -1,0 +1,18 @@
+@import url(./style-a.css);
+@import url(./style-b.css);
+@import url(./style-c.css);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+p {
+    font-size: 13px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.p-original {
+    color: red;
+}
