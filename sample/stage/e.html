@@ -27,12 +27,20 @@
             <div class="form-group">
                 <textarea class="form-control" rows="5" placeholder="message" name="message"></textarea>
             </div>
-            <button type="submit" class="btn btn-default btn-lg">Send</button>
+            <button id="submit-button" type="submit" class="btn btn-default btn-lg">Send</button>
         </form>
     </div>
     <script>
-        window.addEventListener("beforeunload", (event) => {
-            return event.returnValue = "confirm prompt";
+        const confirm = (e) => {
+            // console.log(e);
+            // e.preventDefault();
+            // IEだとプロンプト出ない・・
+            return e.returnValue = "";
+        }
+
+        window.addEventListener("beforeunload", confirm);
+        document.getElementById("submit-button").addEventListener("click", () => {
+            window.removeEventListener("beforeunload", confirm);
         });
     </script>
 </body>
