@@ -11,27 +11,6 @@
     padding-bottom: 15px;
 }
 
-.typing-effect {
-    animation: typing 2s steps(25), blink .5s step-end infinite alternate;
-    border-right: 1px solid;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-@keyframes typing {
-    from {
-        width: 0
-    }
-    to {
-        width: 140px;
-    }
-}
-@keyframes blink {
-    50% {
-        border-color: transparent
-    }
-}
-
 /* =========== menu style =========== */
 .menu-container {
     position: relative;
