@@ -1,132 +1,134 @@
 #about .contents {
-    color: #e1dfdf;
-    text-align: center;
-    width: 100%;
+  color: #e1dfdf;
+  text-align: center;
+  width: 100%;
 }
 
 #about .title {
-    font-family: serif;
-    font-size: 1.5em;
-    letter-spacing: 0.5rem;
-    padding-top: 3rem;
+  font-family: serif;
+  font-size: 1.5em;
+  letter-spacing: 0.5rem;
+  padding-top: 3rem;
 }
 
 .profile {
-    width: 100%;
+  width: 100%;
+  display: contents;
 }
 
 .profile-img {
-    background-image: url(../img/about.png);
-    background-position: center;
-    background-size: cover;
-    border-radius: 50%;
-    display: inline-block;
-    height: 180px;
-    width: 180px;
+  background-image: url(../img/about.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  display: inline-block;
+  height: 180px;
+  width: 180px;
 }
 
 /* desktop styles */
-@media only screen and (min-width: 768px) { 
-    .profile-left {
-        display: block;
-        float: left;
-        margin: 0 4em 0 8em;
-        max-width: 250px;
-        text-align: center;
-        width: 50%;
-    }
+@media only screen and (min-width: 768px) {
+  .profile-left {
+    display: block;
+    float: left;
+    margin: 0 4em 0 8em;
+    max-width: 250px;
+    text-align: center;
+    width: 50%;
+  }
 }
 /* mobile styles */
-@media only screen and (max-width: 767px) { 
-    .profile-left {
-        display: block;
-        margin: auto;
-        min-width: 250px;
-        text-align: center;
-        width: 50%;
-    }
+@media only screen and (max-width: 767px) {
+  .profile-left {
+    display: block;
+    margin: auto;
+    min-width: 250px;
+    text-align: center;
+    width: 50%;
+  }
 }
 
 .profile-left ul {
-    list-style: none;
-    text-align: left;
-    padding-left: 0;
-    overflow: scroll;
-    -ms-overflow-style: none; /* IE, Edge */
-    scrollbar-width: none; /* Firefox */
-    white-space: nowrap;
+  list-style: none;
+  text-align: left;
+  padding-left: 0;
+  overflow: scroll;
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
+  white-space: nowrap;
 }
 
 .profile-left ul::-webkit-scrollbar {
-    /* Chrome, Safari */
-    display:none;
+  /* Chrome, Safari */
+  display: none;
 }
 
 .profile-left ul li {
-    margin: 2.5px 0 2.5px;
+  margin: 2.5px 0 2.5px;
 }
 
 .link-text {
-    color: #e1dfdf;
-    text-decoration: none;
-    transition: all 1.0s ease 0s;
+  color: #e1dfdf;
+  text-decoration: none;
+  transition: all 1s ease 0s;
 }
 
 .link-text:hover {
-    color: #00C6A7;
-    text-decoration: none;
+  color: #00c6a7;
+  text-decoration: none;
 }
 
 .link-icon {
-    background-color:rgba(0,0,0,0.7);
-    border-radius: 18px;
-    margin: 0 5px;
-    transition: all 0.6s ease 0s;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 18px;
+  margin: 0 5px;
+  transition: all 0.6s ease 0s;
 }
 
 .link-icon:hover {
-    transform: scale(1.4, 1.4);
+  transform: scale(1.4, 1.4);
 }
 
 .profile-right {
-    display: inline-block;
-    margin-top: 1.5em;
-    text-align: left;
-    width: 50%;
+  display: inline-block;
+  margin-top: 1.5em;
+  text-align: left;
+  width: 50%;
 }
 
 /* desktop styles */
-@media only screen and (min-width: 768px) { 
-    .profile-right {
-        height: 450px;
-        overflow-y: scroll;
-        -ms-overflow-style: none; /* IE, Edge */
-        scrollbar-width: none; /* Firefox */
-    }
-    .profile-right::-webkit-scrollbar {
-        /* Chrome, Safari */
-        display:none;
-    }
+@media only screen and (min-width: 768px) {
+  .profile-right {
+    height: 75%;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE, Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .profile-right::-webkit-scrollbar {
+    /* Chrome, Safari */
+    display: none;
+  }
 }
 
-@media only screen and (max-width: 767px) { 
-    /* .profile-right {
+/* mobile styles */
+@media only screen and (max-width: 767px) {
+  /* .profile-right {
         display: none;
     } */
-    #about .contents {
-        overflow-y: scroll;
-    }
+  #about .contents {
+    overflow-y: scroll;
+  }
 
-    .profile-right {
-        display: block;
-        margin: 3.5em auto;
-        min-width: 250px;
-        text-align: left;
-        width: 50%;
-    }
+  .profile-right {
+    display: block;
+    margin: 3.5em auto 1.5em;
+    min-width: 250px;
+    text-align: left;
+    width: 50%;
+  }
 }
 
 .profile-right p span {
-    color: magenta;
-    font-weight: 600;
+  color: magenta;
+  font-weight: 600;
 }

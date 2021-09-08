@@ -1,291 +1,454 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>RYO CV</title>
 
-<head>
-  <meta charset="utf-8">
-  <title>RYO CV</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117098514-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMQVKV2VPH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117098514-1"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMQVKV2VPH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      gtag('config', 'UA-117098514-1');
+      gtag('config', 'G-GMQVKV2VPH');
+    </script>
 
-    gtag('config', 'UA-117098514-1');
-    gtag('config', 'G-GMQVKV2VPH');
-  </script>
+    <meta name="description" content="Hello, I'm R.M. Welcome to RYO CV." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="R.M" />
 
-  <meta name="description" content="Hello, I'm R.M. Welcome to RYO CV.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="author" content="R.M">
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no" />
 
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
+    <!-- OGP -->
+    <meta property="og:type" content="Website" />
+    <meta property="og:url" content="https://ryocv.online/profile/" />
+    <meta property="og:title" content="RYO CV" />
+    <meta property="og:site=name" content="RYO CV" />
+    <meta property="og:description" content="Hello, I'm R.M. RYO CV is my CV." />
+    <meta property="og:image" content="https://ryocv.online/profile/img/ogp.png" />
 
-  <!-- OGP -->
-  <meta property="og:type" content="Website">
-  <meta property="og:url" content="https://ryocv.online/profile/">
-  <meta property="og:title" content="RYO CV">
-  <meta property="og:site=name" content="RYO CV">
-  <meta property="og:description" content="Hello, I'm R.M. RYO CV is my CV.">
-  <meta property="og:image" content="https://ryocv.online/profile/img/ogp.png">
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="img/icon128.png" />
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="icon" href="img/favicon.ico" />
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="img/icon128.png">
-  <!-- Place favicon.ico in the root directory -->
-  <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/works.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/thanks.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="css/works.css">
-  <link rel="stylesheet" href="css/about.css">
-  <link rel="stylesheet" href="css/thanks.css">
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="theme-color" content="#fafafa" />
+  </head>
 
-  <meta name="theme-color" content="#fafafa">
-</head>
+  <body>
+    <nav class="menu-container">
+      <!-- burger menu -->
+      <input id="burger" type="checkbox" aria-label="Toggle menu" />
+      <span></span>
+      <span></span>
+      <span></span>
 
-<body>
+      <!-- menu items -->
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="#home" onclick="clickMenuLink('home')"> Home </a>
+          </li>
+          <li>
+            <a href="#works" onclick="clickMenuLink('works')"> Works </a>
+          </li>
+          <li>
+            <a href="#about" onclick="clickMenuLink('about')"> About </a>
+          </li>
+          <li>
+            <a href="#thanks" onclick="clickMenuLink('thanks')"> Thanks </a>
+          </li>
+        </ul>
+        <input id="switch" type="checkbox" hidden onclick="darkModeShift()" />
+        <label for="switch" class="switch"> </label>
+      </div>
+    </nav>
 
-  <nav class="menu-container">
-    <!-- burger menu -->
-    <input id="burger" type="checkbox" aria-label="Toggle menu" />
-    <span></span>
-    <span></span>
-    <span></span>
-    
-    <!-- menu items -->
-    <div class="menu">
-      <ul>
-        <li>
-          <a href="#home" onclick="clickMenuLink('home')">
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#works" onclick="clickMenuLink('works')">
-            Works
-          </a>
-        </li>
-        <li>
-          <a href="#about" onclick="clickMenuLink('about')">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="#thanks" onclick="clickMenuLink('thanks')">
-            Thanks
-          </a>
-        </li>
-      </ul>
-      <input id="switch" type="checkbox" hidden onclick="darkModeShift()">
-      <label for="switch" class="switch">
-      </label>
-    </div>
-  </nav>
+    <noscript>
+      <p>Please turn on JavaScript.</p>
+    </noscript>
 
-  <noscript>
-    <p>Please turn on JavaScript.</p>
-  </noscript>
-  
-  <div id="background" class="background">
-    <div class="contents">
-      <ul class="background-animation">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-  </div>
-
-  <div id="home" class="pages">
-    <div class="contents">
-      <h1 class="title">RYO CV</h1>
-      <p>created by R/M .</p>
-    </div>
-  </div>
-
-  <div id="works" class="pages" style="visibility: hidden;">
-    <div class="contents">
-      <h1 class="title">Works</h1>
-      <p>Here is a link on the website I created. It is never a high quality item, but it gradually improves.</p>
-      <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
-        <div class="gallery-cell">
-          <div class="works-link">
-            <a href="https://ryocv.online/game/tictactoe/" target="_blank" rel="noopener" title="tic-tac-toe">
-              <img class="works-image lazyload" width="512" height="256" data-src="img/work01-hover.webp" alt="tic-tac-toe">
-            </a>
-          </div>
-          <div class="works-text">
-            <h4>001</h4>
-            <h3>Tic-Tac-Toe</h3>
-            <p>Simple Tic-Tac-Toe game.</p>
-          </div>
-        </div>
-        <div class="gallery-cell">
-          <div class="works-link">
-            <a href="https://ryocv.online/game/othello/" target="_blank" rel="noopener" title="othello">
-              <img class="works-image lazyload" width="512" height="256" data-src="img/work02-hover.webp" alt="othello">
-            </a>
-          </div>
-          <div class="works-text">
-            <h4>002</h4>
-            <h3>Othello</h3>
-            <p>Simple Othello game.</p>
-          </div>
-        </div>
-        <div class="gallery-cell">
-          <div class="works-link">
-            <a href="https://ryocv.online/mediation/" target="_blank" rel="noopener" title="mediation">
-              <img class="works-image lazyload" width="512" height="256" data-src="img/work03-hover.webp" alt="mediation">
-            </a>
-          </div>
-          <div class="works-text">
-            <h4>003</h4>
-            <h3>Mediation</h3>
-            <p>An app available for meditation.</p>
-          </div>
-        </div>
-        <div class="gallery-cell">
-          <div class="works-link">
-            <a href="https://ryocv.online/motorcycle/" target="_blank" rel="noopener" title="motorcycle">
-              <img class="works-image lazyload" width="512" height="256" data-src="img/work04-hover.webp" alt="motorcycle">
-            </a>
-          </div>
-          <div class="works-text">
-            <h4>004</h4>
-            <h3>Motorcycle Game</h3>
-            <p>Motorcycle game created with Canvas.</p>
-          </div>
-        </div>
-        <div class="gallery-cell">
-          <div class="works-link">
-            <a href="https://ryocv.online/music/" target="_blank" rel="noopener" title="music">
-              <img class="works-image lazyload" width="512" height="256" data-src="img/work05-hover.webp" alt="music">
-            </a>
-          </div>
-          <div class="works-text">
-            <h4>005</h4>
-            <h3>Music Player</h3>
-            <p>Music player made with a copyright-free sound source.</p>
-          </div>
-        </div>
-        <div class="gallery-cell">
-          <div class="works-link">
-            <a href="https://ryocv.online/gameboy/" target="_blank" rel="noopener" title="game-boy">
-              <img class="works-image lazyload" width="512" height="256" data-src="img/work06-hover.webp" alt="game-boy">
-            </a>
-          </div>
-          <div class="works-text">
-            <h4>006</h4>
-            <h3>Game Boy</h3>
-            <p>Created the first Game Boy with CSS.</p>
-          </div>
-        </div>
-        <div class="gallery-cell">
-          <div class="works-link">
-            <a href="https://ryocv.online/aframe/" target="_blank" rel="noopener" title="virtual-reality">
-              <img class="works-image lazyload" width="512" height="256" data-src="img/work07-hover.webp" alt="virtual-reality">
-            </a>
-          </div>
-          <div class="works-text">
-            <h4>007</h4>
-            <h3>VR</h3>
-            <p>Virtual Reality with A-Frame.</p>
-          </div>
-        </div>
+    <div id="background" class="background">
+      <div class="contents">
+        <ul class="background-animation">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
     </div>
-  </div>
 
-  <div id="about" class="pages" style="visibility: hidden;">
-    <div class="contents">
-      <h1 class="title">About</h1>
-      <div class="profile">
-        <div class="profile-left">
-          <div class="profile-img"></div>
-          <h3>R.M</h3>
-          <ul>
-            <li><i class="fa fa-home"></i> Japan</li>
-            <li><i class="fa fa-building"></i> <a href="https://www.is-tech.co.jp/" class="link-text" target="_blank" rel="noopener noreferrer">Information strategy and technology Co.,Ltd</a></li>
-            <li><i class="fa fa-envelope"></i> <a href="mailto:jane.doe3wtp4649@gmail.com" class="link-text">jane.doe3wtp4649@gmail.com</a></li>
-            <li><i class="fa fa-desktop"></i> <a href="https://ryocv.online/profile/" class="link-text" target="_blank" rel="noopener noreferrer">https://ryocv.online/profile/</a></li>
-          </ul> 
-          <h3>SNS</h3>
-          <a href="https://twitter.com/RYO_nami" target="_blank" rel="noopener noreferrer"><img data-src="img/twitter.png" alt="twitter" class="link-icon lazyload" width="30" height="30"></a>
-          <a href="https://github.com/ryoAccount" target="_blank" rel="noopener noreferrer"><img data-src="img/github.png" alt="github" class="link-icon lazyload" width="32" height="32"></a>
-          <a href="https://qiita.com/RYO_nami" target="_blank" rel="noopener noreferrer"><img data-src="img/qiita.png" alt="qiita" class="link-icon lazyload" width="30" height="30"></a>
-          <a href="https://note.com/ryo_nami" target="_blank" rel="noopener noreferrer"><img data-src="img/note.png" alt="note" class="link-icon lazyload" width="30" height="30"></a>
-        </div>
-        <div class="profile-right">
-          <h3>I′m a FrontEnd Engineer.</h3>
-          <p>Mainly good at development with <span>Vue.js</span> or vanilla JavaScript. <br>I create websites every day, even in private.</p>
-          <hr>
-          <h3>I have both Developer and Manager skills.</h3>
-          <p>Good at HTML, CSS and JavaScript. <span>HTML5 Professional Lv1/Lv2 certified</span>. <br>Leader experience of more than 10 members.</p>
-          <hr>
-          <h3>I′m also good at access analysis using Google Analytics.</h3>
-          <p>Analyze my website to aggregate the sources of users and the devices used. <br>I have a Google Analytics Individual Qualification (Beginner)</p>
-          <hr>
-          <h3>I want to be Web Director in the future.</h3>
-          <p>Plan and create world-famous web applications like Twitter and Facebook.</p>
-          <br>
+    <div id="home" class="pages">
+      <div class="contents">
+        <h1 class="title">RYO CV</h1>
+        <p>created by R/M .</p>
+      </div>
+    </div>
+
+    <div id="works" class="pages" style="visibility: hidden">
+      <div class="contents">
+        <h1 class="title">Works</h1>
+        <p>
+          Here is a link on the website I created. It is never a high quality item, but it gradually
+          improves.
+        </p>
+        <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+          <div class="gallery-cell">
+            <div class="works-link">
+              <a
+                href="https://ryocv.online/game/tictactoe/"
+                target="_blank"
+                rel="noopener"
+                title="tic-tac-toe"
+              >
+                <img
+                  class="works-image lazyload"
+                  width="512"
+                  height="256"
+                  data-src="img/work01-hover.webp"
+                  alt="tic-tac-toe"
+                />
+              </a>
+            </div>
+            <div class="works-text">
+              <h4>001</h4>
+              <h3>Tic-Tac-Toe</h3>
+              <p>Simple Tic-Tac-Toe game.</p>
+            </div>
+          </div>
+          <div class="gallery-cell">
+            <div class="works-link">
+              <a
+                href="https://ryocv.online/game/othello/"
+                target="_blank"
+                rel="noopener"
+                title="othello"
+              >
+                <img
+                  class="works-image lazyload"
+                  width="512"
+                  height="256"
+                  data-src="img/work02-hover.webp"
+                  alt="othello"
+                />
+              </a>
+            </div>
+            <div class="works-text">
+              <h4>002</h4>
+              <h3>Othello</h3>
+              <p>Simple Othello game.</p>
+            </div>
+          </div>
+          <div class="gallery-cell">
+            <div class="works-link">
+              <a
+                href="https://ryocv.online/mediation/"
+                target="_blank"
+                rel="noopener"
+                title="mediation"
+              >
+                <img
+                  class="works-image lazyload"
+                  width="512"
+                  height="256"
+                  data-src="img/work03-hover.webp"
+                  alt="mediation"
+                />
+              </a>
+            </div>
+            <div class="works-text">
+              <h4>003</h4>
+              <h3>Mediation</h3>
+              <p>An app available for meditation.</p>
+            </div>
+          </div>
+          <div class="gallery-cell">
+            <div class="works-link">
+              <a
+                href="https://ryocv.online/motorcycle/"
+                target="_blank"
+                rel="noopener"
+                title="motorcycle"
+              >
+                <img
+                  class="works-image lazyload"
+                  width="512"
+                  height="256"
+                  data-src="img/work04-hover.webp"
+                  alt="motorcycle"
+                />
+              </a>
+            </div>
+            <div class="works-text">
+              <h4>004</h4>
+              <h3>Motorcycle Game</h3>
+              <p>Motorcycle game created with Canvas.</p>
+            </div>
+          </div>
+          <div class="gallery-cell">
+            <div class="works-link">
+              <a href="https://ryocv.online/music/" target="_blank" rel="noopener" title="music">
+                <img
+                  class="works-image lazyload"
+                  width="512"
+                  height="256"
+                  data-src="img/work05-hover.webp"
+                  alt="music"
+                />
+              </a>
+            </div>
+            <div class="works-text">
+              <h4>005</h4>
+              <h3>Music Player</h3>
+              <p>Music player made with a copyright-free sound source.</p>
+            </div>
+          </div>
+          <div class="gallery-cell">
+            <div class="works-link">
+              <a
+                href="https://ryocv.online/gameboy/"
+                target="_blank"
+                rel="noopener"
+                title="game-boy"
+              >
+                <img
+                  class="works-image lazyload"
+                  width="512"
+                  height="256"
+                  data-src="img/work06-hover.webp"
+                  alt="game-boy"
+                />
+              </a>
+            </div>
+            <div class="works-text">
+              <h4>006</h4>
+              <h3>Game Boy</h3>
+              <p>Created the first Game Boy with CSS.</p>
+            </div>
+          </div>
+          <div class="gallery-cell">
+            <div class="works-link">
+              <a
+                href="https://ryocv.online/aframe/"
+                target="_blank"
+                rel="noopener"
+                title="virtual-reality"
+              >
+                <img
+                  class="works-image lazyload"
+                  width="512"
+                  height="256"
+                  data-src="img/work07-hover.webp"
+                  alt="virtual-reality"
+                />
+              </a>
+            </div>
+            <div class="works-text">
+              <h4>007</h4>
+              <h3>VR</h3>
+              <p>Virtual Reality with A-Frame.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="thanks" class="pages" style="visibility: hidden;">
-    <div class="contents">
-      <h1 class="title">Thanks</h1>
-      <p>RYO CV uses the following oss and web tools. <br>I sincerely thank and respect the creators of oss.</p>
-
-      <div>
-        <a href="https://flickity.metafizzy.co/" target="_blank" rel="noopener noreferrer" class="thanks-link"><h3>flickity</h3></a>
+    <div id="about" class="pages" style="visibility: hidden">
+      <div class="contents">
+        <h1 class="title">About</h1>
+        <div class="profile">
+          <div class="profile-left">
+            <div class="profile-img"></div>
+            <h3>R.M</h3>
+            <ul>
+              <li><i class="fa fa-home"></i> Japan</li>
+              <li>
+                <i class="fa fa-building"></i>
+                <a
+                  href="https://www.is-tech.co.jp/"
+                  class="link-text"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Information strategy and technology Co.,Ltd</a
+                >
+              </li>
+              <li>
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:jane.doe3wtp4649@gmail.com" class="link-text"
+                  >jane.doe3wtp4649@gmail.com</a
+                >
+              </li>
+              <li>
+                <i class="fa fa-desktop"></i>
+                <a
+                  href="https://ryocv.online/profile/"
+                  class="link-text"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://ryocv.online/profile/</a
+                >
+              </li>
+            </ul>
+            <h3>SNS</h3>
+            <a href="https://twitter.com/RYO_nami" target="_blank" rel="noopener noreferrer"
+              ><img
+                data-src="img/twitter.png"
+                alt="twitter"
+                class="link-icon lazyload"
+                width="30"
+                height="30"
+            /></a>
+            <a href="https://github.com/ryoAccount" target="_blank" rel="noopener noreferrer"
+              ><img
+                data-src="img/github.png"
+                alt="github"
+                class="link-icon lazyload"
+                width="32"
+                height="32"
+            /></a>
+            <a href="https://qiita.com/RYO_nami" target="_blank" rel="noopener noreferrer"
+              ><img
+                data-src="img/qiita.png"
+                alt="qiita"
+                class="link-icon lazyload"
+                width="30"
+                height="30"
+            /></a>
+            <a href="https://note.com/ryo_nami" target="_blank" rel="noopener noreferrer"
+              ><img
+                data-src="img/note.png"
+                alt="note"
+                class="link-icon lazyload"
+                width="30"
+                height="30"
+            /></a>
+          </div>
+          <div class="profile-right">
+            <h3>I′m a FrontEnd Engineer.</h3>
+            <p>
+              Mainly good at development with <span>Vue.js</span> or vanilla JavaScript. <br />I
+              create websites every day, even in private.
+            </p>
+            <hr />
+            <h3>I have both Developer and Manager skills.</h3>
+            <p>
+              Good at HTML, CSS and JavaScript.
+              <span>HTML5 Professional Lv1/Lv2 certified</span>. <br />Leader experience of more
+              than 10 members.
+            </p>
+            <hr />
+            <h3>I′m also good at access analysis using Google Analytics.</h3>
+            <p>
+              Analyze my website to aggregate the sources of users and the devices used. <br />I
+              have a Google Analytics Individual Qualification (Beginner)
+            </p>
+            <hr />
+            <h3>I want to be Web Director in the future.</h3>
+            <p>Plan and create world-famous web applications like Twitter and Facebook.</p>
+          </div>
+        </div>
       </div>
-      <div>
-        <a href="https://css.gg/" target="_blank" rel="noopener noreferrer" class="thanks-link"><h3>700+ CSS Icons</h3></a>
-      </div>
-      <div>
-        <a href="https://github.com/aFarkas/lazysizes" target="_blank" rel="noopener noreferrer" class="thanks-link"><h3>lazysizes</h3></a>
-      </div>
-      <div>
-        <a href="https://html5boilerplate.com/" target="_blank" rel="noopener noreferrer" class="thanks-link"><h3>HTML5 Boilerplate</h3></a>
-      </div>
-      <div>
-        <a href="https://neutralx0.net/tools/cat_icon/" target="_blank" rel="noopener noreferrer" class="thanks-link"><h3>Bakeneko Icon Maker</h3></a>
-      </div>
-
-      <p>And, I would like to thank everyone who visited RYO CV !!😆</p>
     </div>
-  </div>
 
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/vendor/lazysizes.min.js" async></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js"></script>
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/profile.js"></script>
+    <div id="thanks" class="pages" style="visibility: hidden">
+      <div class="contents">
+        <h1 class="title">Thanks</h1>
+        <p>
+          RYO CV uses the following oss and web tools. <br />I sincerely thank and respect the
+          creators of oss.
+        </p>
 
-  <!-- Google Analytics -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-117098514-1', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+        <div>
+          <a
+            href="https://flickity.metafizzy.co/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="thanks-link"
+            ><h3>flickity</h3></a
+          >
+        </div>
+        <div>
+          <a href="https://css.gg/" target="_blank" rel="noopener noreferrer" class="thanks-link"
+            ><h3>700+ CSS Icons</h3></a
+          >
+        </div>
+        <div>
+          <a
+            href="https://github.com/aFarkas/lazysizes"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="thanks-link"
+            ><h3>lazysizes</h3></a
+          >
+        </div>
+        <div>
+          <a
+            href="https://html5boilerplate.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="thanks-link"
+            ><h3>HTML5 Boilerplate</h3></a
+          >
+        </div>
+        <div>
+          <a
+            href="https://neutralx0.net/tools/cat_icon/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="thanks-link"
+            ><h3>Bakeneko Icon Maker</h3></a
+          >
+        </div>
 
-</body>
+        <p>And, I would like to thank everyone who visited RYO CV !!😆</p>
+      </div>
+    </div>
 
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="js/vendor/lazysizes.min.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/profile.js"></script>
+
+    <!-- Google Analytics -->
+    <script>
+      window.ga = function () {
+        ga.q.push(arguments);
+      };
+      ga.q = [];
+      ga.l = +new Date();
+      ga('create', 'UA-117098514-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('set', 'transport', 'beacon');
+      ga('send', 'pageview');
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+  </body>
 </html>
