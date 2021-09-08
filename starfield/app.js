@@ -65,7 +65,7 @@ createApp({
         <ZoomBlurPass :strength="zoomStrength" />
       </EffectComposer>
     </Renderer>
-    <a href="#" @click="updateColors" @mouseenter="targetTimeCoef = 100" @mouseleave="targetTimeCoef = 1">Random Colors</a>
+    <!-- <a href="#" @click="updateColors" @mouseenter="targetTimeCoef = 100" @mouseleave="targetTimeCoef = 1">Random Colors</a> -->
   `,
     components: {
         BufferGeometry,
@@ -108,8 +108,8 @@ createApp({
 
         const clock = new Clock();
 
-        const timeCoef = 1,
-            targetTimeCoef = 1;
+        const timeCoef = 1;
+        // const targetTimeCoef = 1;
 
         return {
             POINTS_COUNT,
@@ -119,7 +119,6 @@ createApp({
             fragmentShader,
             clock,
             timeCoef,
-            targetTimeCoef,
         };
     },
     data() {
@@ -133,7 +132,7 @@ createApp({
         const points = this.$refs.points.points;
 
         renderer.onBeforeRender(() => {
-            this.timeCoef = lerp(this.timeCoef, this.targetTimeCoef, 0.02);
+            this.timeCoef = lerp(this.timeCoef, /** this.targetTimeCoef */ 1, 0.02);
             this.uniforms.uTime.value += this.clock.getDelta() * this.timeCoef * 4;
             this.zoomStrength = this.timeCoef * 0.004;
 
