@@ -23,6 +23,7 @@
   border-radius: 15px;
 }
 
+/* desktop styles */
 @media only screen and (min-width: 768px) {
   .gallery {
     width: 75%;
@@ -71,6 +72,14 @@
 /* mobile styles */
 @media only screen and (max-width: 767px) {
   .works-image {
+    height: 200px;
+  }
+
+  .flickity-viewport {
+    height: 200px !important;
+  }
+
+  .gallery-cell {
     height: 200px;
   }
 }
