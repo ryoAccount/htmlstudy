@@ -69,14 +69,30 @@
 
 .link-text {
   color: #e1dfdf;
+  position: relative;
   text-decoration: none;
-  transition: all 1s ease 0s;
 }
 
-.link-text:hover {
+.link-text::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #31aae2;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+
+.link-text:hover::after {
+  width: 100%;
+}
+
+/* .link-text:hover {
   color: #00c6a7;
   text-decoration: none;
-}
+} */
 
 .link-icon {
   background-color: rgba(0, 0, 0, 0.7);
@@ -121,6 +137,7 @@
 }
 .category-area {
   border-left: solid 2px white;
+  margin-bottom: 2.5em;
   padding-left: 5px;
 }
 
@@ -130,6 +147,10 @@
 }
 .skill li {
   display: flex;
+  margin: 5px 0;
+}
+.skill li img {
+  margin-right: 5px;
 }
 .experienced-ability {
   min-width: 90px;
