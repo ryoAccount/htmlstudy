@@ -44,7 +44,7 @@
     margin: auto;
     min-width: 250px;
     text-align: center;
-    width: 50%;
+    width: 80%;
   }
 }
 
@@ -91,9 +91,49 @@
 
 .profile-right {
   display: inline-block;
-  margin-top: 1.5em;
   text-align: left;
   width: 50%;
+}
+
+.profile-right-heading {
+  font-size: 1.2em;
+  letter-spacing: 0.25rem;
+  margin-top: 0;
+  text-align: left;
+}
+
+.affiliation {
+  list-style-type: none;
+  padding-left: 0;
+}
+.affiliation li {
+  margin-bottom: 1em;
+}
+.experienced-period {
+  min-width: 150px;
+  display: inline-block;
+}
+
+.category-heading {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+.category-area {
+  border-left: solid 2px white;
+  padding-left: 5px;
+}
+
+.skill {
+  list-style-type: none;
+  padding-left: 5px;
+}
+.skill li {
+  display: flex;
+}
+.experienced-ability {
+  min-width: 90px;
+  display: inline-block;
 }
 
 /* desktop styles */
@@ -106,6 +146,10 @@
   }
   .profile-right::-webkit-scrollbar {
     /* Chrome, Safari */
+    display: none;
+  }
+
+  .pc-not-display {
     display: none;
   }
 }
@@ -124,7 +168,11 @@
     margin: 3.5em auto 1.5em;
     min-width: 250px;
     text-align: left;
-    width: 50%;
+    width: 90%;
+  }
+
+  .profile-right-heading {
+    text-align: center;
   }
 }
 
