@@ -15,87 +15,40 @@ function clickMenuLink(menu) {
 }
 
 let isDarkMode = true;
-const MENU_LINK_A_TAGS = document
-  .getElementsByClassName('menu-container')[0]
-  .getElementsByTagName('a');
-const LINK_TEXTS = document.getElementsByClassName('link-text');
-const CATEGORY_AREAS = document.getElementsByClassName('category-area');
-const THANKS_LINKS = document.getElementsByClassName('thanks-link');
-
 function darkModeShift() {
   isDarkMode = !isDarkMode;
-  if (isDarkMode) {
-    MENU_LINKS.forEach((contents) => {
-      document.getElementById(contents).style.backgroundColor = 'black';
-      document.getElementById(contents).getElementsByClassName('contents')[0].style.color =
-        '#e1dfdf';
-    });
 
-    let menuCount = 0;
-    while (menuCount < MENU_LINK_A_TAGS.length) {
-      MENU_LINK_A_TAGS[menuCount].style.color = '';
-      MENU_LINK_A_TAGS[menuCount].addEventListener('mouseover', function () {
+  const backgroundColor = isDarkMode ? '#010101' : '#e1dfdf';
+  const fontColor = isDarkMode ? '#e1dfdf' : '#010101';
+
+  MENU_LINKS.forEach((contents) => {
+    document.getElementById(contents).style.backgroundColor = backgroundColor;
+    document.getElementById(contents).getElementsByClassName('contents')[0].style.color = fontColor;
+  });
+
+  if (window.innerWidth > 768) {
+    Array.from(
+      document.getElementsByClassName('menu-container')[0].getElementsByTagName('a')
+    ).forEach((a) => {
+      a.style.color = fontColor;
+      a.addEventListener('mouseover', function () {
         this.style.color = '#00C6A7';
       });
-      MENU_LINK_A_TAGS[menuCount].addEventListener('mouseout', function () {
-        this.style.color = '#e1dfdf';
+      a.addEventListener('mouseout', function () {
+        this.style.color = fontColor;
       });
-      menuCount++;
-    }
-
-    let linkCount = 0;
-    while (linkCount < LINK_TEXTS.length) {
-      LINK_TEXTS[linkCount].style.color = '';
-      linkCount++;
-    }
-
-    let skillCount = 0;
-    while (skillCount < CATEGORY_AREAS.length) {
-      CATEGORY_AREAS[skillCount].style.borderLeft = 'solid 2px white';
-      skillCount++;
-    }
-
-    let thanksCount = 0;
-    while (thanksCount < THANKS_LINKS.length) {
-      THANKS_LINKS[thanksCount].style.color = '';
-      thanksCount++;
-    }
-  } else {
-    MENU_LINKS.forEach((contents) => {
-      document.getElementById(contents).style.backgroundColor = 'rgb(200, 200, 200)';
-      document.getElementById(contents).getElementsByClassName('contents')[0].style.color = '#111';
     });
-
-    if (window.innerWidth > 768) {
-      let menuCount = 0;
-      while (menuCount < MENU_LINK_A_TAGS.length) {
-        MENU_LINK_A_TAGS[menuCount].style.color = '#111';
-        MENU_LINK_A_TAGS[menuCount].addEventListener('mouseover', function () {
-          this.style.color = '#00C6A7';
-        });
-        MENU_LINK_A_TAGS[menuCount].addEventListener('mouseout', function () {
-          this.style.color = '#111';
-        });
-        menuCount++;
-      }
-    }
-
-    let linkCount = 0;
-    while (linkCount < LINK_TEXTS.length) {
-      LINK_TEXTS[linkCount].style.color = 'black';
-      linkCount++;
-    }
-
-    let skillCount = 0;
-    while (skillCount < CATEGORY_AREAS.length) {
-      CATEGORY_AREAS[skillCount].style.borderLeft = 'solid 2px black';
-      skillCount++;
-    }
-
-    let thanksCount = 0;
-    while (thanksCount < THANKS_LINKS.length) {
-      THANKS_LINKS[thanksCount].style.color = '#111';
-      thanksCount++;
-    }
   }
+
+  Array.from(document.getElementsByClassName('link-text')).forEach((text) => {
+    text.style.color = fontColor;
+  });
+
+  Array.from(document.getElementsByClassName('category-area')).forEach((area) => {
+    area.style.borderColor = fontColor;
+  });
+
+  Array.from(document.getElementsByClassName('thanks-link')).forEach((link) => {
+    link.style.color = fontColor;
+  });
 }
