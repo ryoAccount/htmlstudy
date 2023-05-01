@@ -4,7 +4,7 @@ import { UserRepository } from "../infrastructure/UserRepository";
 export class UserCreateUseCase {
   constructor() {}
 
-  async handler(name: string, email: string): Promise<void> {
+  async execute(name: string, email: string): Promise<void> {
     try {
       const user = new User(name, email);
       await new UserRepository().save(user);
