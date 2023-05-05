@@ -1,5 +1,5 @@
 import { User } from "../../domain/User";
 
 export interface IUserRepository {
-  save(user: User): Promise<void>;
+  save(user: User): Promise<number>;
 }

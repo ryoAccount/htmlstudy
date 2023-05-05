@@ -8,10 +8,10 @@ export class UserCreateUseCase {
     this.userRepository = userRepository;
   }
 
-  async execute(name: string, email: string): Promise<void> {
+  async execute(name: string, email: string): Promise<number> {
     try {
       const user = new User(name, email);
-      await this.userRepository.save(user);
+      return await this.userRepository.save(user);
     } catch (error) {
       throw error;
     }

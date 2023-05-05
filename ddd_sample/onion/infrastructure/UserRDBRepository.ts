@@ -16,14 +16,17 @@ export class UserRDBRepository implements IUserRepository {
     });
   }
 
-  async save(user: User): Promise<void> {
+  async save(user: User): Promise<number> {
     try {
       await this.connection.query(
         "INSERT INTO (name, email) VALUES (?, ?)",
         [user.getName(), user.getEmail()]
       );
       console.log("success insert");
-      return;
+      const userId: number = await this.connection.query(
+        "SELECT LAST_INSERT_ID()"
+      )
+      return userId;
     } catch (error) {
       console.log(error.message);
       throw error;
