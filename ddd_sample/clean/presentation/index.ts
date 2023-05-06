@@ -9,7 +9,7 @@ app.get("/users/create", async (req: Request, res: Response) => {
       res.status(400).json({ result: "INVALID", message: "request invalid" });
     }
     const result = await userController.create(req.params.name, req.params.email);
-    res.status(200).json({ result: "SUCCESS", message: "User id: " + result.toString() });
+    res.status(200).json({ result: "SUCCESS", message: "ok" });
   } catch (error) {
     res.status(500).json({ result: "ERROR", message: error.message });
   }
