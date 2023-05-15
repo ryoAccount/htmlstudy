@@ -3,7 +3,7 @@ import userCreateUseCase from "../DIContainer";
 
 const app = express();
 
-app.get("/users/create", async (req: Request, res: Response) => {
+app.post("/users/create", async (req: Request, res: Response) => {
   try {
     if (!req.params.name || !req.params.email) {
       res.status(400).json({ result: "INVALID", message: "request invalid" });
