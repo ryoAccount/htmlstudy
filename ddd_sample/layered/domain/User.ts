@@ -1,3 +1,5 @@
+import { UserRepository } from "../infrastructure/UserRepository";
+
 export class User {
   private readonly id?: number;
   private readonly name: string;
@@ -61,5 +63,9 @@ export class User {
 
   public getEmail(): string {
     return this.email;
+  }
+
+  public insert(): Promise<number> {
+    return new UserRepository().save(this);
   }
 }

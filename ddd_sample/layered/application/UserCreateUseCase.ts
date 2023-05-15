@@ -1,5 +1,4 @@
 import { User } from "../domain/User";
-import { UserRepository } from "../infrastructure/UserRepository";
 
 export class UserCreateUseCase {
   constructor() {}
@@ -7,7 +6,7 @@ export class UserCreateUseCase {
   async execute(name: string, email: string): Promise<number> {
     try {
       const user = new User(name, email);
-      return await new UserRepository().save(user);
+      return await user.insert();
     } catch (error) {
       throw error;
     }
