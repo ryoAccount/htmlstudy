@@ -7,11 +7,9 @@ export class User {
     if (!this.isValidName(name)) {
       throw new Error("Invalid name format");
     }
-
     if (!this.isValidEmail(email)) {
       throw new Error("Invalid email format");
     }
-
     this.name = name;
     this.email = email;
   }
